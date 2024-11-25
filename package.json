@@ -1,0 +1,14 @@
+{
+  "name": "nchnap688-sum1",
+  "version": "1.0.0",
+  "description": "Software Engineering - Summative 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
