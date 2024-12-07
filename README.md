@@ -1,5 +1,5 @@
 <details>
-<summary>Assessment Details</summary>
+  <summary>Assessment Details</summary>
 
 |                    | Description                                 |
 | ------------------ | ------------------------------------------- |
@@ -13,3 +13,36 @@
 
 </details>
 
+Summary
+
+Proposal
+
+Design
+Planning
+
+
+
+<details>
+  <summary>Requirements</summary>
+
+  
+| ID | Details                                                                  |
+| -- | ------------------------------------------------------------------------ |
+| 01 |  User selects their country via clicking on a map                        |
+| 02 | Current date and time is shown for chosed timezone                       |
+| 03 | User inputs a desired meeting date and time                              |
+| 04 | User clicks on destination country                                       |
+| 05 | Output shows what date and time that will be in the destination country  |
+| 06 | User can print a reminder card                                           |
+
+</details>
+
+Build
+Add Features
+Document
+Tickets
+
+<details>
+  <summary>Evaluation</summary>
+- Content
+</details>
