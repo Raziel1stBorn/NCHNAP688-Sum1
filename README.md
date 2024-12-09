@@ -52,7 +52,7 @@ The user can start using the functionality of the application, or quit. As this 
   ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](/images/figma_low_fi_01.jpg)
 
 
-  
+  <hr>  
 </details>
 
 <details>
