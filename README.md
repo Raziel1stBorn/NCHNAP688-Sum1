@@ -56,7 +56,7 @@ The user can start using the functionality of the application, or quit. As this 
   
 | ID | Details                                                                  |
 | -- | ------------------------------------------------------------------------ |
-| 01 |  User selects their country via clicking on a map                        |
+| 01 | User selects their country via clicking on a map                        |
 | 02 | Current date and time is shown for chosed timezone                       |
 | 03 | User inputs a desired meeting date and time                              |
 | 04 | User clicks on destination country                                       |
