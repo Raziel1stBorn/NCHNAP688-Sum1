@@ -30,6 +30,14 @@
 </details>
 
 <details>
+  <summary>Development Approach</summary>
+  <hr>
+The development approach of this project will be itterative and agile, with an expectation of two to three sprints. A significant component of this product is the user interface (UI), an itterative agile approach allows for the testing of useable software and UI at earlier stages in the software development lifecycle, and results from this can lead to changes in development (Ferreira, Noble and Biddle, 2007). 
+  <hr>
+</details>
+
+
+<details>
   <summary>Design with Figma</summary>
   <hr>
   
@@ -68,6 +76,8 @@ The user can start using the functionality of the application, or quit. As this 
 <details>
   <summary>MVP Build Process (Dedicated Section)</summary>
   <hr>
+
+
   
   ## Sprint 1
   <br>
@@ -93,7 +103,13 @@ The user can start using the functionality of the application, or quit. As this 
 <details>
   <summary>References</summary>
   <hr>
-  ABF (2024) <i>Where we operate</i> [online].<br>  
+ABF (2024) <i>Where we operate</i> [online].<br>  
           &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://www.abf.co.uk/about-us/where-we-operate  <br>
-          &nbsp;&nbsp;&nbsp;&nbsp;(Accessed: 09 December 2024).
+          &nbsp;&nbsp;&nbsp;&nbsp;(Accessed: 09 December 2024). <br><br>
+
+  Ferreira, J., Noble, J. and Biddle, R. (2007) 'Agile development iterations and UI design', <i>Proceedings of the Agile 2007 Agile Development Conference.</i> 13-17 August 2007, Washington, DC.  
+          &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://www.abf.co.uk/about-us/where-we-operate](https://ieeexplore-ieee-org.ezproxy.neu.edu/document/4293575  <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;(Accessed: 09 December 2024). <br><br>
+  
+  
 </details>
