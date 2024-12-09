@@ -13,18 +13,31 @@
 
 </details>
 
-Summary
-
-Proposal
-
-Design
-Planning
-
+# Time Zone Meeting Aid
 
 
 <details>
-  <summary>Requirements</summary>
+  <summary>Summary/Introduction</summary>
+  <hr>
+  
+  ## Title  
 
+</details>
+  
+<details>
+  <summary>Product Proposal</summary>
+</details>
+
+<details>
+  <summary>Design with Figma</summary>
+</details>
+
+<details>
+  <summary>DS - Project Management Tools</summary>
+</details>
+
+<details>
+  <summary>Requirement Capture</summary>
   
 | ID | Details                                                                  |
 | -- | ------------------------------------------------------------------------ |
@@ -37,12 +50,22 @@ Planning
 
 </details>
 
-Build
-Add Features
-Document
-Tickets
+<details>
+  <summary>DS - MVP Build Process</summary>
+
+## Sprint 1
+## Sprint 2
+## Sprint 3
+  
+</details>
+
+
 
 <details>
-  <summary>Evaluation</summary>
+  <summary>User and Technical Documentation</summary>
+</details>
+
+<details>
+  <summary>DS - Evaluation</summary>
 - Content
 </details>
