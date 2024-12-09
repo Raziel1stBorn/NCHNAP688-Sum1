@@ -36,7 +36,9 @@
 A low-fidelity flow for the application was prototyped using Figma and is available at [Figma.com](https://www.figma.com/proto/kTpbqRqdkA15Keu1uF1nJs/Summative-1?node-id=1-2&t=BiJiPwSoCtLmuO3u-1/).
 
   <br>
-  <br>
+
+A welcome screen will provide the user with some basic information about the application, and will feature some appropriate imagry and branding.
+The user can start using the functionality of the application, or quit. As this is a web-based applicaiton, quitting will take them to the ABF homepage.
 
   
   ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](/images/figma_low_fi_01.jpg)
