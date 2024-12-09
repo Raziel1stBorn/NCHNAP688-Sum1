@@ -52,11 +52,16 @@
 
 <details>
   <summary>DS - MVP Build Process</summary>
-
-## Sprint 1
-## Sprint 2
-## Sprint 3
+  <hr>
   
+  ## Sprint 1
+  <br>
+  
+  ## Sprint 2
+  <br>
+  
+  ## Sprint 3
+
 </details>
 
 
