@@ -19,13 +19,14 @@
 <details>
   <summary>Summary/Introduction</summary>
   <hr>
-  
-  ## Title  
 
 </details>
   
 <details>
   <summary>Product Proposal</summary>
+  <hr>
+  My employer is part of Associated British Foods plc, which is multi-national business with operations in 56 countries around the world (ABF, 2024). With colleagues in mutliple timezones, planning meetings with consideration and convenience can be challenging. My product proposal is for an easy to use application where users can set a location, date, and time, then select a second location, and the application will give the equivalent date and time for the secondary location.   
+  <hr>
 </details>
 
 <details>
@@ -73,4 +74,12 @@
 <details>
   <summary>DS - Evaluation</summary>
 - Content
+</details>
+
+<details>
+  <summary>References</summary>
+  <hr>
+  ABF (2024) <i>Where we operate</i> [online].<br>  
+          &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://www.abf.co.uk/about-us/where-we-operate  <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;(Accessed: 09 December 2024).
 </details>
