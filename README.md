@@ -109,7 +109,7 @@ ABF (2024) <i>Where we operate</i> [online].<br>
 
   Ferreira, J., Noble, J. and Biddle, R. (2007) 'Agile development iterations and UI design', <br> 
           &nbsp;&nbsp;&nbsp;&nbsp;<i>Proceedings of the Agile 2007 Agile Development Conference.</i> 13-17 August 2007, Washington, DC.  
-          &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://www.abf.co.uk/about-us/where-we-operate](https://ieeexplore-ieee-org.ezproxy.neu.edu/document/4293575  <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://ieeexplore-ieee-org.ezproxy.neu.edu/document/4293575  <br>
           &nbsp;&nbsp;&nbsp;&nbsp;(Accessed: 09 December 2024). <br><br>
   
   
