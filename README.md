@@ -34,7 +34,7 @@
 </details>
 
 <details>
-  <summary>DS - Project Management Tools</summary>
+  <summary>Project Management Tools (Dedicated Section)</summary>
 </details>
 
 <details>
@@ -52,7 +52,7 @@
 </details>
 
 <details>
-  <summary>DS - MVP Build Process</summary>
+  <summary>MVP Build Process (Dedicated Section)</summary>
   <hr>
   
   ## Sprint 1
@@ -72,7 +72,7 @@
 </details>
 
 <details>
-  <summary>DS - Evaluation</summary>
+  <summary>Evaluation (Dedicated Section)</summary>
 - Content
 </details>
 
