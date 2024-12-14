@@ -20,6 +20,9 @@
   <summary>Summary/Introduction</summary>
   <hr>
 
+  
+  ## Summary/Introduction
+  
 </details>
   
 <details>
@@ -32,7 +35,10 @@
 <details>
   <summary>Development Approach</summary>
   <hr>
-The development approach of this project will be itterative and agile, with an expectation of two to three sprints. A significant component of this product is the user interface (UI), an itterative agile approach allows for the testing of useable software and UI at earlier stages in the software development lifecycle, and results from this can lead to changes in development (Ferreira, Noble and Biddle, 2007). 
+
+  ## Development Approach
+  
+The development approach of this project will be itterative and agile, with an expectation of three sprints. A significant component of this product is the user interface (UI), an itterative agile approach allows for the testing of useable software and UI at earlier stages in the software development lifecycle, and results from this can lead to changes in development (Ferreira, Noble and Biddle, 2007). 
   <hr>
 </details>
 
@@ -56,7 +62,7 @@ The user can start using the functionality of the application, or quit. As this 
 
 ## Moodboard
 
-To aid decision making regarding colour schemes and design choices, I created a moodboard. This was made up from screen snippets of solid colours snapped from abf.co.uk, I then identified the HEX and RGB values of these colours for easy reference when it comes to formatting the visuals of the applicaiton. A list of CSS web safe fonts was obtained from w3schools.com (2024), these were added to the moodboard and Verdana was chosen for the application font as it is stylistically complementary to the font used for the Associated British Foods plc name.       
+To aid decision making regarding colour schemes and design choices, I created a moodboard. This was made up from screen snippets of solid colours snapped from abf.co.uk, I then identified the HEX and RGB values of these colours for easy reference when it comes to formatting the visuals of the applicaiton. A list of CSS web safe fonts was obtained from w3schools.com (2024), these were added to the moodboard and Verdana was chosen for the application font as it is stylistically complementary to the font used for the Associated British Foods plc name. An AI generated image of the globe was created using Microsoft Designer (n.d.) as it is free to use and avoids any licensing issues.            
 
   ![Image of Low-fidelity Figma mock up of the application.](/images/mood_board.png)
 
@@ -69,6 +75,15 @@ To aid decision making regarding colour schemes and design choices, I created a 
 
 <details>
   <summary>Project Management Tools (Dedicated Section)</summary>
+
+## Project Management Tools
+
+  The project management tool used is GitHub Projects. There are three planned iterations:
+
+  1) 09 December 2024 - 15 December 2024
+      
+  2) 
+
 </details>
 
 <details>
@@ -123,6 +138,10 @@ Ferreira, J., Noble, J. and Biddle, R. (2007) 'Agile development iterations and 
           &nbsp;&nbsp;&nbsp;&nbsp;<i>Proceedings of the Agile 2007 Agile Development Conference.</i> 13-17 August 2007, Washington, DC.  
           &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://ieeexplore-ieee-org.ezproxy.neu.edu/document/4293575  <br>
           &nbsp;&nbsp;&nbsp;&nbsp;(Accessed: 09 December 2024). <br>
+
+Microsoft Designer (n.d.) <iCreate images</i> [online]. <br> 
+          &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://designer.microsoft.com/image-creator?scenario=texttoimage  <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;(Accessed: 14 December 2024). <br>
 
 w3schools.com (2024) <i>CSS web safe fonts</i> [online]. <br> 
           &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://www.w3schools.com/cssref/css_websafe_fonts.php  <br>
