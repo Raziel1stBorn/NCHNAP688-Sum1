@@ -10,12 +10,13 @@ body {
 
 .container {
     width: 1130px;
-    height: 860px;
+    height: 850px;
     margin: 15px auto; /* Reduced spacing from the top of the page */
     position: relative;
     border: 1px solid #ccc;
     background-color: rgba(255, 255, 255, 0.9); /* Slight white overlay */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    justify-content: center;	
     outline: 2px solid blue; /* Visualizes container area */
 }
 
@@ -24,6 +25,33 @@ body {
     text-align: left;
     padding: 20px;
     border: 1px dashed green; /* Visualizes text-area */
+}
+
+.date-time-area {
+	width: 1087px;
+    height: 30px;
+    position: relative;
+    text-align: left;
+    padding: 20px;
+    border: 1px dashed purple; /* Visualizes text-area */
+}
+
+.map-area {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    border: 1px dashed orange; /* Visualizes text-area */
+    height: 690px; /* Set the specific height you want */
+    width: 1025px; /* Set the specific height you want */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	margin: 0 auto; /* Center horizontally in outer container */
+}
+
+#map {
+    height: 100%; /* Full height of the map area */
+    width: 100%; /* Full width */
 }
 
 h1 {
@@ -46,6 +74,18 @@ p {
     padding: 20px;
     border: 1px dashed red; /* Visualizes button container */
     background-color: rgba(255, 255, 255, 0.8); /* Optional background for better contrast */
+}
+
+.button-container-app {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: left;
+    padding: 10px;
+    width: 900px;
+    border: 1px dashed red;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .button img {

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="map.css" />
+</head>
+<body>
+    <div class="container">
+        <!-- Date and Time Section -->
+        <div class="date-time-area">
+            <p>Date and time entry section.</p>
+        </div>
+
+        <!-- World Map Section -->
+        <div class="map-area">
+            <div id="map"></div>
+        </div>
+
+        <!-- Button Section -->
+        <div class="button-container-app">
+			<a href="#" class="button" onclick="saveAsImage()">
+				<img src="save.png" alt="Save an image of the date and time conversion">
+			</a>
+            </a>
+            <a href="" class="button">
+                <img src="another.png" alt="Reset to do another date and time conversion">
+            </a>
+            <a href="https://www.abf.co.uk/" class="button">
+                <img src="exit.png" alt="Visit ABF">
+            </a>			
+        </div>
+    </div>
+
+    <!-- The div element where the map will be displayed -->
+    <div id="map"></div>
+
+	<!-- Include the html2canvas library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <!-- Include the Leaflet.js script -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    
+    <!-- Link to your custom JavaScript file -->
+    <script src="map.js"></script>
+	
+	
+</body>
+</html>
