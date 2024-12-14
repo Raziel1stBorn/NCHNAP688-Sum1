@@ -78,7 +78,7 @@ To aid decision making regarding colour schemes and design choices, I created a 
 
 ## Project Management Tools
 
-  The project management tool used is GitHub Projects. There are three planned iterations:
+  The project management tool used is GitHub Projects. The Iterative Project Planning template was selected so that the iterations and sprints can be clearly shown and managed. There are three planned iterations:
 
   1) <b>Iteration 01</b><br>
      09 December 2024 - 15 December 2024<br>
