@@ -56,7 +56,7 @@ The user can start using the functionality of the application, or quit. As this 
 
 ## Moodboard
 
-To aid decision making regarding colour schemes and design choices, I created a moodboard. This was made up from screen snippets of solid colours snapped from abf.co.uk, I then identified the HEX and RGB values of these colours for easy reference when it comes to formatting the visuals of the applicaiton. A list of CSS web safe fonts was obtained from w3schools.com (2024), these were added to the moodboard and Verdana was chosen for the application font as it is stylistically complementary to the font used for the Associated British Foods plc name.       
+To aid decision making regarding colour schemes and design choices, I created a moodboard. This was made up from screen snippets of solid colours snapped from abf.co.uk, I then identified the HEX and RGB values of these colours for easy reference when it comes to formatting the visuals of the applicaiton. A list of CSS web safe fonts was obtained from w3schools.com (2024), these were added to the moodboard and Verdana was chosen for the application font as it is stylistically complementary to the font used for the Associated British Foods plc name. An AI generated image of the globe was created using Microsoft Designer (n.d.) as it is free to use and avoids any licensing issues.            
 
   ![Image of Low-fidelity Figma mock up of the application.](/images/mood_board.png)
 
@@ -123,6 +123,10 @@ Ferreira, J., Noble, J. and Biddle, R. (2007) 'Agile development iterations and 
           &nbsp;&nbsp;&nbsp;&nbsp;<i>Proceedings of the Agile 2007 Agile Development Conference.</i> 13-17 August 2007, Washington, DC.  
           &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://ieeexplore-ieee-org.ezproxy.neu.edu/document/4293575  <br>
           &nbsp;&nbsp;&nbsp;&nbsp;(Accessed: 09 December 2024). <br>
+
+Microsoft Designer (n.d.) <iCreate images</i> [online]. <br> 
+          &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://designer.microsoft.com/image-creator?scenario=texttoimage  <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;(Accessed: 14 December 2024). <br>
 
 w3schools.com (2024) <i>CSS web safe fonts</i> [online]. <br> 
           &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://www.w3schools.com/cssref/css_websafe_fonts.php  <br>
