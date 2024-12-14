@@ -38,9 +38,10 @@ The development approach of this project will be itterative and agile, with an e
 
 
 <details>
-  <summary>Design and Low-Fidelity Model</summary>
+  <summary>Low-Fidelity Plan and Moodboard</summary>
   <hr>
-  
+
+## Low-Fidelity Plan
 A low-fidelity flow for the application was prototyped using Figma and is available at [Figma.com](https://www.figma.com/proto/kTpbqRqdkA15Keu1uF1nJs/Summative-1?node-id=1-2&t=BiJiPwSoCtLmuO3u-1/).
 
   <br>
@@ -50,6 +51,12 @@ The user can start using the functionality of the application, or quit. As this 
 
   
   ![Image of Low-fidelity Figma mock up of the application.](/images/figma_low_fi_01.jpg)
+
+<br>
+
+## Moodboard
+
+To aid decision making regarding colour schemes and design choices, I created a moodboard. This was made up from screen snippets of solid colours snapped from abf.co.uk, I then identified the HEX and RGB values of these colours for easy reference when it comes to formatting the visuals of the applicaiton. A list of CSS web safe fonts was obtained from w3schools.com (2024), these were added to the moodboard and Verdana was chosen for the application font as it is stylistically complementary to the font used for the Associated British Foods plc name.       
 
   ![Image of Low-fidelity Figma mock up of the application.](/images/mood_board.png)
 
@@ -112,10 +119,13 @@ ABF (2024) <i>Where we operate</i> [online].<br>
           &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://www.abf.co.uk/about-us/where-we-operate  <br>
           &nbsp;&nbsp;&nbsp;&nbsp;(Accessed: 09 December 2024). <br><br>
 
-  Ferreira, J., Noble, J. and Biddle, R. (2007) 'Agile development iterations and UI design', <br> 
+Ferreira, J., Noble, J. and Biddle, R. (2007) 'Agile development iterations and UI design', <br> 
           &nbsp;&nbsp;&nbsp;&nbsp;<i>Proceedings of the Agile 2007 Agile Development Conference.</i> 13-17 August 2007, Washington, DC.  
           &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://ieeexplore-ieee-org.ezproxy.neu.edu/document/4293575  <br>
-          &nbsp;&nbsp;&nbsp;&nbsp;(Accessed: 09 December 2024). <br><br>
-  
+          &nbsp;&nbsp;&nbsp;&nbsp;(Accessed: 09 December 2024). <br>
+
+w3schools.com (2024) <i>CSS web safe fonts</i> [online]. <br> 
+          &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://www.w3schools.com/cssref/css_websafe_fonts.php  <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;(Accessed: 14 December 2024). <br><br>
   
 </details>
