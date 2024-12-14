@@ -97,10 +97,9 @@ To aid decision making regarding colour schemes and design choices, I created a 
   The iterations as configured and shown in GitHub projects. 
   ![Image of GitHub projects iteration planning.](/images/github_projects_iterations.jpg)
 
-  <br>
 
   Setting out the basic tasks for the first iteration. 
-  ![Image showing kanban style cards for To Do, In Progress, and Done.](/images/kanban_card_example.jpg)
+  ![Image showing kanban style cards for To Do, In Progress, and Done.](/images/kanban_style_cards_iteration01.jpg)
 
 </details>
 
