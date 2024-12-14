@@ -64,7 +64,7 @@ The user can start using the functionality of the application, or quit. As this 
 
 To aid decision making regarding colour schemes and design choices, I created a moodboard. This was made up from screen snippets of solid colours snapped from abf.co.uk, I then identified the HEX and RGB values of these colours for easy reference when it comes to formatting the visuals of the applicaiton. A list of CSS web safe fonts was obtained from w3schools.com (2024), these were added to the moodboard and Verdana was chosen for the application font as it is stylistically complementary to the font used for the Associated British Foods plc name. An AI generated image of the globe was created using Microsoft Designer (n.d.) as it is free to use and avoids any licensing issues.            
 
-  ![Image of Low-fidelity Figma mock up of the application.](/images/mood_board.png)
+  ![Image of moodboard showing colour and font design elements.](/images/mood_board.png)
 
 
 
@@ -80,9 +80,21 @@ To aid decision making regarding colour schemes and design choices, I created a 
 
   The project management tool used is GitHub Projects. There are three planned iterations:
 
-  1) 09 December 2024 - 15 December 2024
+  1) <b>Iteration 01</b><br>
+     09 December 2024 - 15 December 2024<br>
+     <b>Goal:</b> Produce a basic framework for the app, showing very basic functionality. 
       
-  2) 
+  2) <b>Iteration 02</b><br>
+     16 December 2024 - 20 December 2024<br>
+     <b>Goal:</b> Aquire user feedback, add visualisation, testing.
+  
+  3) <b>Iteration 03</b><br>
+     21 December 2024 - 04 January 2025<br>
+     <b>Goal:</b> Aquire user feedback, testing.      
+
+  <br>
+
+  ![Image of GitHub projects iteration planning.](/images/github_projects_iterations.jpg)
 
 </details>
 
