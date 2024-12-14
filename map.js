@@ -34,7 +34,7 @@ function saveAsImage() {
 
         // Trigger a download of the image
         const link = document.createElement('a');
-        link.download = 'map_snapshot.png'; // Set default filename
+        link.download = 'date_time_meeting_snapshot.png'; // Set default filename
         link.href = canvas.toDataURL('image/png'); // Convert canvas to a PNG data URL
         link.click(); // Simulate a click to trigger download
     });
