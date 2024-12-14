@@ -3,69 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time Zone Meeting Aid</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <style>
-        #map { height: 80vh; width: 100%; }
-        #info { padding: 10px; }
-    </style>
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="info">
-        <h2>Time Zone Converter</h2>
-        <p>Select a time zone on the map, enter a date and time, then select another time zone to see the conversion.</p>
-        <label for="datetime">Enter Date and Time:</label>
-        <input type="datetime-local" id="datetime" />
-        <button id="convert">Convert Time</button>
-        <p id="result"></p>
+    <div class="container">
+        <!-- Welcome Text Section -->
+        <div class="text-area">
+            <h1>Welcome</h1>
+            <p>This is your starting point. Navigate to the app or visit a website of interest.</p>
+        </div>
+
+        <!-- Button Section -->
+        <div class="button-container">
+            <a href="app.html" class="button">
+                <img src="button-app.png" alt="Go to App">
+            </a>
+            <a href="https://www.abf.co.uk/" class="button">
+                <img src="button-abf.png" alt="Visit ABF">
+            </a>
+        </div>
     </div>
-    <div id="map"></div>
-
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script>
-        // Initialize the map
-        const map = L.map('map').setView([20, 0], 2);
-
-        // Add a tile layer (you could use a time zone specific layer or image overlay)
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors',
-        }).addTo(map);
-
-        let firstTimeZone = null;
-        let secondTimeZone = null;
-
-        // Function to handle map clicks
-        map.on('click', function(e) {
-            const lat = e.latlng.lat;
-            const lng = e.latlng.lng;
-            const offset = Math.floor(lng / 15); // Estimate UTC offset
-            if (!firstTimeZone) {
-                firstTimeZone = offset;
-                alert(`First Time Zone UTC Offset: ${offset}`);
-            } else if (!secondTimeZone) {
-                secondTimeZone = offset;
-                alert(`Second Time Zone UTC Offset: ${offset}`);
-            }
-        });
-
-        // Convert the time
-        document.getElementById('convert').addEventListener('click', function() {
-            if (firstTimeZone === null || secondTimeZone === null) {
-                alert('Please select both time zones first!');
-                return;
-            }
-            const datetimeInput = document.getElementById('datetime').value;
-            if (!datetimeInput) {
-                alert('Please enter a date and time!');
-                return;
-            }
-            const date = new Date(datetimeInput);
-            const firstTime = new Date(date.getTime() - firstTimeZone * 3600 * 1000);
-            const secondTime = new Date(firstTime.getTime() + secondTimeZone * 3600 * 1000);
-
-            document.getElementById('result').textContent = 
-                `Time in the second zone: ${secondTime.toLocaleString()}`;
-        });
-    </script>
 </body>
 </html>
