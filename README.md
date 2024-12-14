@@ -20,6 +20,9 @@
   <summary>Summary/Introduction</summary>
   <hr>
 
+  
+  ## Summary/Introduction
+  
 </details>
   
 <details>
@@ -32,7 +35,10 @@
 <details>
   <summary>Development Approach</summary>
   <hr>
-The development approach of this project will be itterative and agile, with an expectation of two to three sprints. A significant component of this product is the user interface (UI), an itterative agile approach allows for the testing of useable software and UI at earlier stages in the software development lifecycle, and results from this can lead to changes in development (Ferreira, Noble and Biddle, 2007). 
+
+  ## Development Approach
+  
+The development approach of this project will be itterative and agile, with an expectation of three sprints. A significant component of this product is the user interface (UI), an itterative agile approach allows for the testing of useable software and UI at earlier stages in the software development lifecycle, and results from this can lead to changes in development (Ferreira, Noble and Biddle, 2007). 
   <hr>
 </details>
 
@@ -69,6 +75,15 @@ To aid decision making regarding colour schemes and design choices, I created a 
 
 <details>
   <summary>Project Management Tools (Dedicated Section)</summary>
+
+## Project Management Tools
+
+  The project management tool used is GitHub Projects. There are three planned iterations:
+
+  1) 09 December 2024 - 15 December 2024
+      
+  2) 
+
 </details>
 
 <details>
