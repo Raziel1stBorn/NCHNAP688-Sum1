@@ -38,7 +38,7 @@ The development approach of this project will be itterative and agile, with an e
 
 
 <details>
-  <summary>Design with Figma</summary>
+  <summary>Design and Low-Fidelity Model</summary>
   <hr>
   
 A low-fidelity flow for the application was prototyped using Figma and is available at [Figma.com](https://www.figma.com/proto/kTpbqRqdkA15Keu1uF1nJs/Summative-1?node-id=1-2&t=BiJiPwSoCtLmuO3u-1/).
@@ -49,7 +49,12 @@ A welcome screen will provide the user with some basic information about the app
 The user can start using the functionality of the application, or quit. As this is a web-based applicaiton, quitting will take them to the ABF homepage.
 
   
-  ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](/images/figma_low_fi_01.jpg)
+  ![Image of Low-fidelity Figma mock up of the application.](/images/figma_low_fi_01.jpg)
+
+  ![Image of Low-fidelity Figma mock up of the application.](/images/mood_board.png)
+
+
+
 
 
   <hr>  
