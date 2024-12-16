@@ -1,0 +1,194 @@
+/* Application Page Basic Styling */
+
+/* ******************************************************************************* */
+/* Body                                                                            */
+/* ******************************************************************************* */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana;
+	font-size: 14px;	
+    height: 100vh;
+}
+
+/* ******************************************************************************* */
+/* Main content container                                                          */
+/* ******************************************************************************* */
+.container {
+    width: 1130px;
+    height: 950px;
+    margin: 5px auto; /* Spacing from top of the page */
+    position: relative;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.9); /* Slight white overlay */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    justify-content: center;	
+    outline: 2px solid blue; /* Visualizes container area */
+}
+
+/* ******************************************************************************* */
+/* Column headings for the three main columns, title section only                  */
+/* ******************************************************************************* */
+.column-heading-area {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0px;
+    border: 2px solid olive;
+}
+
+.column-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+	outline: 2px dotted olive; /* Visualizes container area */
+}
+.column-section p {
+    margin: 0; /* Remove default margin from <p> tags */
+    font-family: Verdana;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+/* ******************************************************************************* */
+/* The 'row' containing all of the date and time elements                          */
+/* ******************************************************************************* */
+.date-time-area {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0px;
+    border: 2px solid DarkMagenta;
+}
+
+.date-time-area p {
+    font-family: Verdana;
+	font-weight: normal;
+	font-size: 14px;
+}
+
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+	outline: 2px dotted crimson; /* Visualizes container area */
+}
+
+
+/* ******************************************************************************* */
+/* Coordinate Row for Latitude and Longitude                                       */
+/* ******************************************************************************* */
+
+.coordinate-row {
+    display: flex; /* Align label and input side by side */
+    align-items: center; /* Vertically align content */
+    gap: 5px; /* Space between label and input */
+    margin-bottom: 5px; /* Adds spacing between rows */
+}
+
+.coordinate-row label {
+    flex: 0 0 80px; /* Set a fixed width for labels */
+    font-weight: normal;
+	font-size: 14px;	
+}
+
+.coordinate-row input {
+    flex: 1; /* Allow the input field to grow and take the remaining space */
+    padding: 5px;
+    font-size: 14px;
+}
+
+
+/* ******************************************************************************* */
+/* The coordinate buttons and row                                                  */
+/* ******************************************************************************* */
+.button-row {
+    display: flex;           /* Enables Flexbox */
+    justify-content: center; /* Horizontally centers the buttons */
+    gap: 10px;               /* Adds space between the buttons */
+}
+
+button {
+    /*flex: 1; /* Makes both buttons take equal width */
+    padding: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+
+/* ******************************************************************************* */
+/* Feedback/Help Message Area                                                      */
+/* ******************************************************************************* */
+.message-area {
+    display: flex;
+    position: relative;
+    text-align: left;
+    padding: 5px;
+    border: 4px dashed yellow; /* Visualizes text-area */
+    /*height: 40px;  Set the specific height you want */
+    /*width: 1025px; /* Set the specific height you want */
+    /*justify-content: left;
+    align-items: center; */
+	margin: 0 auto; /* Center horizontally in outer container */
+}
+
+
+
+/* ******************************************************************************* */
+/* The area which displays the actual map                                          */
+/* ******************************************************************************* */
+
+.map-area {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    border: 1px dashed orange; /* Visualizes text-area */
+    height: 690px; /* Set the specific height you want */
+    width: 1025px; /* Set the specific height you want */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	margin: 0 auto; /* Center horizontally in outer container */
+}
+
+#map {
+    height: 100%; /* Full height of the map area */
+    width: 100%; /* Full width */
+}
+
+
+/* ******************************************************************************* */
+/* The area holding the navigation buttons at the bottom of the page               */
+/* ******************************************************************************* */
+.button-container-app {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    justify-content: center;	
+    padding: 10px;
+    width: 980px;
+    border: 1px dashed red;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.button img {
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    margin-right: 10px; /* Adds spacing between buttons */
+}
+
+.button img:hover {
+    opacity: 0.8;
+}

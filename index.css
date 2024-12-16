@@ -1,0 +1,41 @@
+/* index.css */
+/* Control formatting for index page only */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+.container {
+    width: 1130px;
+    height: 850px;
+    margin: 15px auto; /* Reduced spacing from the top of the page */
+    position: relative;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.9); /* Slight white overlay */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    justify-content: center;	
+    outline: 2px solid blue; /* Visualizes container area */
+}
+
+.welcome-area {
+    position: relative;
+    text-align: left;
+    padding: 20px;
+    border: 1px dashed green; /* Visualizes text-area */
+}
+
+
+.button-container {
+    position: absolute;
+    bottom: 20px; /* Aligns buttons to the bottom with some space */
+    left: 20px; /* Optional: controls horizontal position */
+    text-align: left;
+    padding: 20px;
+    border: 1px dashed red; /* Visualizes button container */
+    background-color: rgba(255, 255, 255, 0.8); /* Optional background for better contrast */
+}

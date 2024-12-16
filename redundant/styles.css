@@ -10,7 +10,7 @@ body {
 
 .container {
     width: 1130px;
-    height: 850px;
+    height: 950px;
     margin: 15px auto; /* Reduced spacing from the top of the page */
     position: relative;
     border: 1px solid #ccc;
@@ -39,6 +39,27 @@ body {
 } 
 */
 
+/* Column Headings */
+.column-heading-area {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0px;
+    border: 2px solid olive;
+}
+
+.column-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+	outline: 2px dotted olive; /* Visualizes container area */
+}
+.column-section p {
+    margin: 0; /* Remove default margin from <p> tags */
+	font-weight: bold;
+	font-size: 16px;
+}
 
 /* new */
 .date-time-area {
@@ -48,19 +69,39 @@ body {
     padding: 0px;
     border: 2px solid DarkMagenta;
 }
+.date-time-area p {
+	font-weight: normal;
+	font-size: 14px;
+}
 
 .column {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 5px;
-	outline: 2px solid crimson; /* Visualizes container area */
+	outline: 2px dotted crimson; /* Visualizes container area */
 }
+
+
+/* Feedback Message Styling */
+#log-message {
+    /*display: none;  Initially hidden */
+    color: blue; /* Text color */
+    font-size: 16px; /* Text size */
+    font-weight: bold; /* Emphasize message */
+    margin-top: 10px; /* Space above the message */
+    text-align: center; /* Center align the text */
+    background-color: #f0f8ff; /* Light blue background */
+    padding: 10px; /* Add padding for spacing */
+    border: 1px solid #add8e6; /* Light blue border */
+    border-radius: 5px; /* Rounded corners */
+}
+
 
 
 button {
     /*flex: 1; /* Makes both buttons take equal width */
-    padding: 10px;
+    padding: 5px;
     font-size: 14px;
     cursor: pointer;
 }
@@ -89,12 +130,13 @@ button {
 .coordinate-row label {
     flex: 0 0 80px; /* Set a fixed width for labels */
     font-weight: normal;
+	font-size: 14px;	
 }
 
 .coordinate-row input {
     flex: 1; /* Allow the input field to grow and take the remaining space */
     padding: 5px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 

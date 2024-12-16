@@ -3,56 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="map.css" />
+    <title>Time Zone Meeting Aid - Application Page</title>
+    <link rel="stylesheet" href="application_page.css">
+    <link rel="stylesheet" href="open_streetmap.css" />
 </head>
 <body>
     <div class="container">
-        <!-- Date and Time Section -->
-            <!-- Date and Time Section -->
-    <div class="date-time-area">
-		<!-- Column 1 -->
-		<div class="column">
-			<!-- Coordinate Logging Buttons -->
-			<div class="button-row">
-				<button id="log-coordinates-btn" onclick="enableCoordinateLogging()">Log Coordinates</button>
-				<button id="clear-coordinates-btn" onclick="clearCoordinates()">Clear Coordinates</button>
-		</div>
-    
-		<!-- Coordinate Display -->
-		<div class="coordinates-display">
-			<div class="coordinate-row">
-				<label for="latitude">Latitude:</label>
-				<input type="text" id="latitude" readonly>
+        <!-- Feedback Message Section -->
+        <div id="feedback-message-container" style="display: none; border: 2px solid lime; padding: 10px; margin-bottom: 20px; color: lime;">
+            <!-- Message content will be dynamically added here -->
+        </div>
+
+		<!-- Headings -->
+		<div class="column-heading-area">
+			<!-- Column 1 -->
+			<div class="column-section">
+				<p>Column 1</p>
 			</div>
-			<div class="coordinate-row">
-				<label for="longitude">Longitude:</label>
-				<input type="text" id="longitude" readonly>
+			<!-- Column 2 -->
+			<div class="column-section">
+				<p>Column 2</p>
+			</div>
+			<!-- Column 3 -->
+			<div class="column-section">
+				<p>Column 3</p>
 			</div>
 		</div>
 
-		<!-- Date and Time Selector -->
-		<div class="date-time-selector">
-			<label for="date-time">Enter Date and Time:</label>
-			<input type="datetime-local" id="date-time">
+		<!-- Date and Time Section -->
+		<div class="date-time-area">
+			
+			<!-- Column 1 -->
+			<div class="column">
+				<!-- Date and Time Selector -->
+				<div class="date-time-selector">
+					<label for="date-time">Enter Date and Time:</label>
+					<input type="datetime-local" id="date-time">
+				</div>
+   
+				<!-- Coordinate Display -->
+				<div class="coordinates-display">
+					<div class="coordinate-row">
+						<label for="latitude">Latitude:</label>
+						<input type="text" id="latitude" readonly>
+					</div>
+					<div class="coordinate-row">
+						<label for="longitude">Longitude:</label>
+						<input type="text" id="longitude" readonly>
+					</div>
+				</div>
+				
+				<!-- Coordinate Logging Buttons -->
+				<div class="button-row">
+					<button id="log-coordinates-btn" onclick="enableCoordinateLogging()">Log Coordinates</button>
+					<button id="clear-coordinates-btn" onclick="clearCoordinates()">Clear Coordinates</button>
+				</div>
+			
+			</div>
+
+			<!-- Column 2 -->
+			<div class="column">
+				<p>Column 2 Placeholder<br>Will be for target</p>
+			</div>
+
+			<!-- Column 3 -->
+			<div class="column">
+				<p>Column 3 Placeholder<br>Will be results date and time</p>
+			</div>
 		</div>
-		</div>
 
-
-
-
-
-        <!-- Column 2 -->
-        <div class="column">
-            <p>Column 2 Placeholder<br>Will be for target</p>
+        <!-- Message area -->
+        <div class="message-area">
+			<div id="message-content">
+			</div>
         </div>
-
-        <!-- Column 3 -->
-        <div class="column">
-            <p>Column 3 Placeholder<br>Will be results date and time</p>
-        </div>
-	</div>
         
         <!-- World Map Section -->
         <div class="map-area">
@@ -82,7 +106,7 @@
     <!-- Link to your custom JavaScript file -->
     <script src="map.js"></script>
 
-    <script>
+       <!-- <script>
         // JavaScript for logging and clearing coordinates
         let enableLogging = false;
 
@@ -97,6 +121,7 @@
             enableLogging = false;
             alert('Coordinates cleared.');
         }
-    </script>
+    </script> -->
+	
 </body>
 </html>
