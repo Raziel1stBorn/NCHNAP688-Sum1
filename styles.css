@@ -27,14 +27,98 @@ body {
     border: 1px dashed green; /* Visualizes text-area */
 }
 
-.date-time-area {
+
+/* Original 
+/* .date-time-area {
 	width: 1087px;
     height: 30px;
     position: relative;
     text-align: left;
     padding: 20px;
-    border: 1px dashed purple; /* Visualizes text-area */
+    border: 1px dashed purple; 
+} 
+*/
+
+
+/* new */
+.date-time-area {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0px;
+    border: 2px solid DarkMagenta;
 }
+
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+	outline: 2px solid crimson; /* Visualizes container area */
+}
+
+
+button {
+    /*flex: 1; /* Makes both buttons take equal width */
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/*.coordinates-display label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.coordinates-display input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+} */
+
+/* Coordinate Row for Latitude and Longitude */
+.coordinate-row {
+    display: flex; /* Align label and input side by side */
+    align-items: center; /* Vertically align content */
+    gap: 5px; /* Space between label and input */
+    margin-bottom: 5px; /* Adds spacing between rows */
+}
+
+.coordinate-row label {
+    flex: 0 0 80px; /* Set a fixed width for labels */
+    font-weight: normal;
+}
+
+.coordinate-row input {
+    flex: 1; /* Allow the input field to grow and take the remaining space */
+    padding: 5px;
+    font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .map-area {
     position: relative;

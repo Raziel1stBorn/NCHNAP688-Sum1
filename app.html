@@ -10,10 +10,50 @@
 <body>
     <div class="container">
         <!-- Date and Time Section -->
-        <div class="date-time-area">
-            <p>Date and time entry section.</p>
+            <!-- Date and Time Section -->
+    <div class="date-time-area">
+		<!-- Column 1 -->
+		<div class="column">
+			<!-- Coordinate Logging Buttons -->
+			<div class="button-row">
+				<button id="log-coordinates-btn" onclick="enableCoordinateLogging()">Log Coordinates</button>
+				<button id="clear-coordinates-btn" onclick="clearCoordinates()">Clear Coordinates</button>
+		</div>
+    
+		<!-- Coordinate Display -->
+		<div class="coordinates-display">
+			<div class="coordinate-row">
+				<label for="latitude">Latitude:</label>
+				<input type="text" id="latitude" readonly>
+			</div>
+			<div class="coordinate-row">
+				<label for="longitude">Longitude:</label>
+				<input type="text" id="longitude" readonly>
+			</div>
+		</div>
+
+		<!-- Date and Time Selector -->
+		<div class="date-time-selector">
+			<label for="date-time">Enter Date and Time:</label>
+			<input type="datetime-local" id="date-time">
+		</div>
+		</div>
+
+
+
+
+
+        <!-- Column 2 -->
+        <div class="column">
+            <p>Column 2 Placeholder<br>Will be for target</p>
         </div>
 
+        <!-- Column 3 -->
+        <div class="column">
+            <p>Column 3 Placeholder<br>Will be results date and time</p>
+        </div>
+	</div>
+        
         <!-- World Map Section -->
         <div class="map-area">
             <div id="map"></div>
@@ -21,23 +61,19 @@
 
         <!-- Button Section -->
         <div class="button-container-app">
-			<a href="#" class="button" onclick="saveAsImage()">
-				<img src="save.png" alt="Save an image of the date and time conversion">
-			</a>
+            <a href="#" class="button" onclick="saveAsImage()">
+                <img src="save.png" alt="Save an image of the date and time conversion">
             </a>
             <a href="" class="button">
                 <img src="another.png" alt="Reset to do another date and time conversion">
             </a>
             <a href="https://www.abf.co.uk/" class="button">
                 <img src="exit.png" alt="Visit ABF">
-            </a>			
+            </a>
         </div>
     </div>
 
-    <!-- The div element where the map will be displayed -->
-    <div id="map"></div>
-
-	<!-- Include the html2canvas library -->
+    <!-- Include the html2canvas library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
     <!-- Include the Leaflet.js script -->
@@ -45,7 +81,22 @@
     
     <!-- Link to your custom JavaScript file -->
     <script src="map.js"></script>
-	
-	
+
+    <script>
+        // JavaScript for logging and clearing coordinates
+        let enableLogging = false;
+
+        function enableCoordinateLogging() {
+            enableLogging = true;
+            alert('Click on the map to log coordinates.');
+        }
+
+        function clearCoordinates() {
+            document.getElementById('latitude').value = '';
+            document.getElementById('longitude').value = '';
+            enableLogging = false;
+            alert('Coordinates cleared.');
+        }
+    </script>
 </body>
 </html>
