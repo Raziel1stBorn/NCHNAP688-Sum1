@@ -5,7 +5,7 @@
 let marker = null;
 
 // Define the variable with the message content
-let message = "MESSAGE: Please select or zoom in and select the starting location.";
+let message = "MESSAGE: Please locate your source location on the map, then click the 'Log Coordinates' button. Note, you can zoom in before clicking the button.";
 
 // State to track if the user is logging coordinates
 let isLoggingCoordinates = false;
@@ -74,12 +74,12 @@ function enableCoordinateLogging() {
     } else {
         // If a date and time are selected, proceed with coordinate logging
         isLoggingCoordinates = true;
-        messageElement.textContent = "You pressed the button. Click on the map to log coordinates.";
+        messageElement.textContent = "MESSAGE: Now left-click on the map where you want to place your source pin.";
     }
 	
    // Optional: Log message feedback
-    const logMessageElement = document.getElementById('log-message');
-    logMessageElement.style.display = 'block'; // Ensure the message is visible
+	document.getElementById('message-content').textContent = 
+    "MESSAGE: Now left-click on the map where you want to place your source pin.";
 }
 
 
@@ -95,8 +95,8 @@ function clearCoordinates() {
     isLoggingCoordinates = false;
 
     // Clear the message
-    const messageElement = document.getElementById('log-message');
-    messageElement.style.display = 'none';
+	document.getElementById('message-content').textContent = 
+    "MESSAGE: Coordinates cleared.";
 
     // Remove the marker from the map, if it exists
     if (marker !== null) {
@@ -125,19 +125,20 @@ map.on('click', function (event) {
         }
 
         // Add the new marker with the custom icon
-        marker = L.marker([lat, lng], 
-		{ icon: customIcon }).addTo(map)
-        //    .bindPopup(`Lat: ${lat}, Lng: ${lng}`).openPopup(); // Show coordinates in popup
+        marker = L.marker([lat, lng], { icon: customIcon }).addTo(map);
+        // Optionally, bind a popup to show coordinates
+        // marker.bindPopup(`Lat: ${lat}, Lng: ${lng}`).openPopup();
 
         // Reset the logging state and clear the message
         isLoggingCoordinates = false;
-        const messageElement = document.getElementById('log-message');
-        messageElement.style.display = 'none';
+        const messageElement = document.getElementById('message-content'); // Updated ID
+        if (messageElement) {
+            messageElement.style.display = 'none';
+        }
     } else {
         console.log("Not logging coordinates. Click ignored.");
     }
 });
-
 
 
 // Debugging Logs
