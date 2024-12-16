@@ -21,7 +21,7 @@ body {
 /* ******************************************************************************* */
 .container {
     width: 1130px;
-    height: 950px;
+    height: 955px;
     margin: 5px auto; /* Spacing from top of the page */
     position: relative;
     border: 1px solid #ccc;
@@ -123,7 +123,6 @@ button {
 }
 
 
-
 /* ******************************************************************************* */
 /* Feedback/Help Message Area                                                      */
 /* ******************************************************************************* */
@@ -133,10 +132,6 @@ button {
     text-align: left;
     padding: 5px;
     border: 4px dashed yellow; /* Visualizes text-area */
-    /*height: 40px;  Set the specific height you want */
-    /*width: 1025px; /* Set the specific height you want */
-    /*justify-content: left;
-    align-items: center; */
 	margin: 0 auto; /* Center horizontally in outer container */
 }
 
@@ -145,7 +140,6 @@ button {
 /* ******************************************************************************* */
 /* The area which displays the actual map                                          */
 /* ******************************************************************************* */
-
 .map-area {
     position: relative;
     text-align: center;
@@ -169,15 +163,17 @@ button {
 /* The area holding the navigation buttons at the bottom of the page               */
 /* ******************************************************************************* */
 .button-container-app {
+    display: flex;
+    /*position: relative;*/
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
     justify-content: center;	
     padding: 10px;
-    width: 980px;
-    border: 1px dashed red;
+    width: 1025px;
+    border: 1px dashed SpringGreen;
     background-color: rgba(255, 255, 255, 0.8);
 }
 
