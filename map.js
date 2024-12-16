@@ -1,23 +1,31 @@
 // ===============================================================================
 // Variables 
 // ===============================================================================
-// Global variable to hold the marker
-let marker = null;
+// Global variables to hold the markers
+let pin_source = null;
+let pin_destination = null;
 
 // Define the variable with the message content
-let message = "MESSAGE: Please locate your source location on the map, then click the 'Log Coordinates' button. Note, you can zoom in before clicking the button.";
+let message = "MESSAGE: Please find your source location on the map, then click 'Log Coordinates' button.";
 
-// State to track if the user is logging coordinates
-let isLoggingCoordinates = false;
+// State to track which pin the user is logging
+let isLoggingSource = false;
+let isLoggingDestination = false;
 
 
 // ===============================================================================
-// Create a custom icon
+// Load the custom icons for the soure and destination pins
 // ===============================================================================
-var customIcon = L.icon({
-    iconUrl: 'images/test_pin.png',  // Path to your .png or .gif file
-    iconSize: [48, 48],  // Size of the icon (optional, you can adjust it)
-    iconAnchor: [16, 32],  // Point of the icon that will be placed at the marker's position (optional)
+var pinIconSource = L.icon({
+    iconUrl: 'images/test_pin.png',  // Path to the source pin image
+    iconSize: [48, 48],  // Dimensions of the image
+    iconAnchor: [16, 32],  // The specfic pixel location that will go over the selected spot 
+});
+
+var pinIconDestination = L.icon({
+    iconUrl: 'images/test_pin2.png',  // Path to the destination pin image
+    iconSize: [48, 48],  // Dimensions of the image
+    iconAnchor: [16, 32],  // The specfic pixel location that will go over the selected spot 
 });
 
 // ===============================================================================
@@ -60,7 +68,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 // ===============================================================================
-// Function to enable coordinate logging
+// Function to enable coordinate logging for the source
 // ===============================================================================
 function enableCoordinateLogging() {
     // Get the selected date and time value
@@ -74,6 +82,7 @@ function enableCoordinateLogging() {
     } else {
         // If a date and time are selected, proceed with coordinate logging
         isLoggingCoordinates = true;
+        isLoggingDestination = false;		
         messageElement.textContent = "MESSAGE: Now left-click on the map where you want to place your source pin.";
     }
 	
@@ -82,26 +91,52 @@ function enableCoordinateLogging() {
     "MESSAGE: Now left-click on the map where you want to place your source pin.";
 }
 
+// ===============================================================================
+// Function to enable coordinate logging for the destination
+// ===============================================================================
+function enableDestinationLogging() {
+    // Going to need some code here.....
+	
+	
+   // Optional: Log message feedback
+	document.getElementById('message-content').textContent = 
+    "MESSAGE: Now left-click on the map where you want to place your source pin.";	
+	}
+
 
 // ===============================================================================
 // Function to clear coordinates
 // ===============================================================================
 function clearCoordinates() {
+	console.log("clearCoordinates function has been called.");
     // Clear the latitude and longitude input fields
     document.getElementById('latitude').value = "";
     document.getElementById('longitude').value = "";
+	console.log("Coordinates cleared.");
 
     // Reset the logging state
     isLoggingCoordinates = false;
+	console.log("isLoggingCoordinates = False.");
 
     // Clear the message
-	document.getElementById('message-content').textContent = 
-    "MESSAGE: Coordinates cleared.";
+	//document.getElementById('message-content').textContent = 
+    //"MESSAGE: Coordinates cleared.";
+	//console.log("Message changed");
+    // Clear the message
+    const messageElement = document.getElementById('message-content');
+    if (messageElement) {
+        messageElement.textContent = "MESSAGE: Previous source coordinates cleared. Please select a new source location.";
+        messageElement.style.display = 'block'; // Make sure it's visible
+        console.log("Message changed and displayed.");
+    } else {
+        console.error("Message element not found!");
+    }
 
     // Remove the marker from the map, if it exists
-    if (marker !== null) {
-        map.removeLayer(marker); // Remove the marker from the map
-        marker = null; // Reset the marker variable to null
+    if (pin_source !== null) {
+        map.removeLayer(pin_source); // Remove the marker from the map
+        pin_source = null; // Reset the marker variable to null
+        console.log("Marker removed.");
     }
 }
 
@@ -120,21 +155,32 @@ map.on('click', function (event) {
         document.getElementById('longitude').value = lng;
 
         // If a marker exists, remove it first
-        if (marker !== null) {
-            map.removeLayer(marker);
+        if (pin_source  !== null) {
+            map.removeLayer(pin_source );
         }
 
-        // Add the new marker with the custom icon
-        marker = L.marker([lat, lng], { icon: customIcon }).addTo(map);
-        // Optionally, bind a popup to show coordinates
-        // marker.bindPopup(`Lat: ${lat}, Lng: ${lng}`).openPopup();
+        // Add the new source marker
+        pin_source = L.marker([lat, lng], { icon: pinIconSource }).addTo(map);
 
-        // Reset the logging state and clear the message
-        isLoggingCoordinates = false;
-        const messageElement = document.getElementById('message-content'); // Updated ID
-        if (messageElement) {
-            messageElement.style.display = 'none';
+        // Update the message and state
+        isLoggingSource = false;
+        document.getElementById('message-content').textContent = "MESSAGE: Source pin placed. Now log the destination.";
+    } else if (isLoggingDestination) {
+        // Log destination coordinates
+        document.getElementById('latitude').value = lat;
+        document.getElementById('longitude').value = lng;
+
+        // Remove the previous destination marker, if any
+        if (pin_destination !== null) {
+            map.removeLayer(pin_destination);
         }
+
+        // Add the new destination marker
+        pin_destination = L.marker([lat, lng], { icon: pinIconSource }).addTo(map);
+
+        // Update the message and state
+        isLoggingDestination = false;
+        document.getElementById('message-content').textContent = "MESSAGE: Destination pin placed.";
     } else {
         console.log("Not logging coordinates. Click ignored.");
     }

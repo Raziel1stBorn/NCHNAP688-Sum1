@@ -131,6 +131,7 @@ button {
     position: relative;
     text-align: left;
     padding: 5px;
+    height: 18px; /* Set the specific height you want */	
     border: 4px dashed yellow; /* Visualizes text-area */
 	margin: 0 auto; /* Center horizontally in outer container */
 }
