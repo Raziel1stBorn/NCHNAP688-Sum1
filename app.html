@@ -18,22 +18,22 @@
 		<div class="column-heading-area">
 			<!-- Column 1 -->
 			<div class="column-section">
-				<p>Column 1</p>
+				<p>First Location</p>
 			</div>
 			<!-- Column 2 -->
 			<div class="column-section">
-				<p>Column 2</p>
+				<p>Second Location</p>
 			</div>
 			<!-- Column 3 -->
 			<div class="column-section">
-				<p>Column 3</p>
+				<p>Results</p>
 			</div>
 		</div>
 
 		<!-- Date and Time Section -->
 		<div class="date-time-area">
 			
-			<!-- Column 1 -->
+			<!-- SOURCE COLUMN -->
 			<div class="column">
 				<!-- Date and Time Selector -->
 				<div class="date-time-selector">
@@ -44,31 +44,60 @@
 				<!-- Coordinate Display -->
 				<div class="coordinates-display">
 					<div class="coordinate-row">
-						<label for="latitude">Latitude:</label>
-						<input type="text" id="latitude" readonly>
-					</div>
-					<div class="coordinate-row">
-						<label for="longitude">Longitude:</label>
-						<input type="text" id="longitude" readonly>
+						<label for="src-latitude">Latitude:</label>
+						<input type="text" id="src-latitude" readonly>
+						<label for="src-longitude">Longitude:</label>
+						<input type="text" id="src-longitude" readonly>
 					</div>
 				</div>
 				
 				<!-- Coordinate Logging Buttons -->
 				<div class="button-row">
-					<button id="log-coordinates-btn" onclick="enableCoordinateLogging()">Log Coordinates</button>
-					<button id="clear-coordinates-btn" onclick="clearCoordinates()">Clear Coordinates</button>
+					<button id="src-log-coordinates-btn" onclick="srcEnableCoordinateLogging()">Log Coordinates</button>
+					<button id="src-clear-coordinates-btn" onclick="srcClearCoordinates()">Clear Coordinates</button>
 				</div>
 			
 			</div>
 
-			<!-- Column 2 -->
+
+
+			<!-- TARGET LOCATION COLUMN -->
 			<div class="column">
-				<p>Column 2 Placeholder<br>Will be for target</p>
+				<!-- Date and Time Selector -->
+				<div class="date-time-selector">
+					<label for="date-time">&nbsp;</label>
+					<!-- <input type="datetime-local" id="date-time"> -->
+				</div>
+   
+				<!-- Coordinate Display -->
+				<div class="coordinates-display">
+					<div class="coordinate-row">
+						<label for="dst-latitude">Latitude:</label>
+						<input type="text" id="dst-latitude" readonly>
+						<label for="dst-longitude">Longitude:</label>
+						<input type="text" id="dst-longitude" readonly>
+					</div>
+				</div>
+				
+				<!-- Coordinate Logging Buttons -->
+				<div class="button-row">
+					<button id="dst-log-coordinates-btn" onclick="dstEnableCoordinateLogging()">Log Coordinates</button>
+					<button id="dst-clear-coordinates-btn" onclick="dstClearCoordinates()">Clear Coordinates</button>
+					<button id="results-btn" onclick="getResults()">Results</button>
+				</div>
+			
 			</div>
 
-			<!-- Column 3 -->
+
+
+
+			<!-- Results -->
 			<div class="column">
-				<p>Column 3 Placeholder<br>Will be results date and time</p>
+				<div class="results-row">
+					<div id="src-results">&nbsp;</div>
+					<div>&nbsp;</div>
+					<div id="dst-results">&nbsp;</div>				
+				</div>
 			</div>
 		</div>
 

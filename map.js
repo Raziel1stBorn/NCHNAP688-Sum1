@@ -5,6 +5,12 @@
 let pin_source = null;
 let pin_destination = null;
 
+// Variables to store coordinates for source and destination
+let src_lat = null;
+let src_lng = null;
+let dst_lat = null;
+let dst_lng = null;
+
 // Define the variable with the message content
 let message = "MESSAGE: Please find your source location on the map, then click 'Log Coordinates' button.";
 
@@ -14,18 +20,18 @@ let isLoggingDestination = false;
 
 
 // ===============================================================================
-// Load the custom icons for the soure and destination pins
+// Load the custom icons for the source and destination pins
 // ===============================================================================
 var pinIconSource = L.icon({
     iconUrl: 'images/test_pin.png',  // Path to the source pin image
     iconSize: [48, 48],  // Dimensions of the image
-    iconAnchor: [16, 32],  // The specfic pixel location that will go over the selected spot 
+    iconAnchor: [16, 32],  // The specific pixel location that will go over the selected spot 
 });
 
 var pinIconDestination = L.icon({
     iconUrl: 'images/test_pin2.png',  // Path to the destination pin image
     iconSize: [48, 48],  // Dimensions of the image
-    iconAnchor: [16, 32],  // The specfic pixel location that will go over the selected spot 
+    iconAnchor: [16, 32],  // The specific pixel location that will go over the selected spot 
 });
 
 // ===============================================================================
@@ -51,6 +57,16 @@ window.onload = function() {
 
     // Set the default date and time
     setDefaultDateTime();
+
+    // Disable destination buttons and inputes on page load
+    document.getElementById('dst-log-coordinates-btn').disabled = true;
+    document.getElementById('dst-clear-coordinates-btn').disabled = true;    
+    document.getElementById('dst-latitude').disabled = true;
+    document.getElementById('dst-longitude').disabled = true;
+    document.getElementById('src-latitude').disabled = true;
+    document.getElementById('src-longitude').disabled = true;      
+    document.getElementById('results-btn').disabled = true;       
+    document.getElementById('src-clear-coordinates-btn').disabled = true;    
 };
 
 
@@ -70,105 +86,184 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // ===============================================================================
 // Function to enable coordinate logging for the source
 // ===============================================================================
-function enableCoordinateLogging() {
+function srcEnableCoordinateLogging() {
+    console.log("Source: Log Coordinates Button Pressed."); 
+
     // Get the selected date and time value
     const dateTimeInput = document.getElementById('date-time');
     const messageElement = document.getElementById('message-content');
+
     
+    
+
     // Check if a date and time have been selected
     if (!dateTimeInput.value) {
         // If no date and time are selected, display a message to the user
         messageElement.textContent = "MESSAGE: Please select a date and time first.";
     } else {
         // If a date and time are selected, proceed with coordinate logging
-        isLoggingCoordinates = true;
-        isLoggingDestination = false;		
+        isLoggingSource = true;
+        isLoggingDestination = false;        
         messageElement.textContent = "MESSAGE: Now left-click on the map where you want to place your source pin.";
     }
-	
-   // Optional: Log message feedback
-	document.getElementById('message-content').textContent = 
-    "MESSAGE: Now left-click on the map where you want to place your source pin.";
 }
 
 // ===============================================================================
 // Function to enable coordinate logging for the destination
 // ===============================================================================
-function enableDestinationLogging() {
-    // Going to need some code here.....
-	
-	
-   // Optional: Log message feedback
-	document.getElementById('message-content').textContent = 
-    "MESSAGE: Now left-click on the map where you want to place your source pin.";	
-	}
+function dstEnableCoordinateLogging() {
+    console.log("Destination: Log Coordinates Button Pressed.");    
+    const messageElement = document.getElementById('message-content');
+    
+    isLoggingSource = false;
+    isLoggingDestination = true;
+    
+    messageElement.textContent = "MESSAGE: Now left-click on the map where you want to place your destination pin.";
+}
 
 
 // ===============================================================================
-// Function to clear coordinates
+// Function to clear SOURCE coordinates
 // ===============================================================================
-function clearCoordinates() {
-	console.log("clearCoordinates function has been called.");
+function srcClearCoordinates() {
+    console.log("srcClearCoordinates function has been called.");
+
     // Clear the latitude and longitude input fields
-    document.getElementById('latitude').value = "";
-    document.getElementById('longitude').value = "";
-	console.log("Coordinates cleared.");
+    document.getElementById('src-latitude').value = "";
+    document.getElementById('src-longitude').value = "";
+
+    // Reset source and destination coordinates
+    src_lat = null;
+    src_lng = null;
+
+    console.log("Source Coordinates cleared.");
 
     // Reset the logging state
-    isLoggingCoordinates = false;
-	console.log("isLoggingCoordinates = False.");
+    isLoggingSource = false;
+    //isLoggingDestination = false;
+    console.log("Source logging state reset.");
 
-    // Clear the message
-	//document.getElementById('message-content').textContent = 
-    //"MESSAGE: Coordinates cleared.";
-	//console.log("Message changed");
+    // Set button interaction states
+    document.getElementById('src-log-coordinates-btn').disabled = false;
+    document.getElementById('src-clear-coordinates-btn').disabled = false;    
+    document.getElementById('src-results').textContent = ''    
+    document.getElementById('dst-results').textContent = ''
+
+
     // Clear the message
     const messageElement = document.getElementById('message-content');
     if (messageElement) {
-        messageElement.textContent = "MESSAGE: Previous source coordinates cleared. Please select a new source location.";
+        messageElement.textContent = "MESSAGE: Source coordinates cleared. You may log a new source location.";
         messageElement.style.display = 'block'; // Make sure it's visible
         console.log("Message changed and displayed.");
     } else {
         console.error("Message element not found!");
     }
 
-    // Remove the marker from the map, if it exists
+    // Remove the markers from the map, if they exist
     if (pin_source !== null) {
-        map.removeLayer(pin_source); // Remove the marker from the map
-        pin_source = null; // Reset the marker variable to null
-        console.log("Marker removed.");
+        map.removeLayer(pin_source);
+        pin_source = null;
+        console.log("Source marker removed.");
     }
+   // if (pin_destination !== null) {
+   //     map.removeLayer(pin_destination);
+   //     pin_destination = null;
+   //     console.log("Destination marker removed.");
+   // } 
 }
 
 
+// ===============================================================================
+// Function to clear DESTINATION coordinates
+// ===============================================================================
+function dstClearCoordinates() {
+    console.log("dstClearCoordinates function has been called.");
+
+    // Clear the latitude and longitude input fields
+    document.getElementById('dst-latitude').value = "";
+    document.getElementById('dst-longitude').value = "";
+
+    // Reset source and destination coordinates
+    src_lat = null;
+    src_lng = null;
+
+    console.log("Destination Coordinates cleared.");
+
+    // Reset the logging state
+    isLoggingDestination = false;
+    //isLoggingDestination = false;
+    console.log("Destination logging state reset.");
+
+    // Set button interaction states
+    document.getElementById('dst-log-coordinates-btn').disabled = false;
+    document.getElementById('dst-clear-coordinates-btn').disabled = false;    
+    document.getElementById('src-results').textContent = ''    
+    document.getElementById('dst-results').textContent = ''  
+
+    // Clear the message
+    const messageElement = document.getElementById('message-content');
+    if (messageElement) {
+        messageElement.textContent = "MESSAGE: Destination coordinates cleared. You may log a new destination location.";
+        messageElement.style.display = 'block'; // Make sure it's visible
+        console.log("Message changed and displayed.");
+    } else {
+        console.error("Message element not found!");
+    }
+
+    // Remove the markers from the map, if they exist
+    if (pin_destination !== null) {
+        map.removeLayer(pin_destination);
+        pin_destination = null;
+        console.log("Destination marker removed.");
+    }
+   // if (pin_destination !== null) {
+   //     map.removeLayer(pin_destination);
+   //     pin_destination = null;
+   //     console.log("Destination marker removed.");
+   // } 
+}
 
 // ===============================================================================
 // Map click event listener
-map.on('click', function (event) {
 // ===============================================================================
-    if (isLoggingCoordinates) {
-        const lat = event.latlng.lat.toFixed(6); // Latitude with precision
-        const lng = event.latlng.lng.toFixed(6); // Longitude with precision
+map.on('click', function (event) {
+    if (isLoggingSource) {
+        src_lat = event.latlng.lat.toFixed(6); // Latitude with precision
+        src_lng = event.latlng.lng.toFixed(6); // Longitude with precision
 
         // Log coordinates to the input fields
-        document.getElementById('latitude').value = lat;
-        document.getElementById('longitude').value = lng;
+        document.getElementById('src-latitude').value = src_lat;
+        document.getElementById('src-longitude').value = src_lng;
 
         // If a marker exists, remove it first
-        if (pin_source  !== null) {
-            map.removeLayer(pin_source );
+        if (pin_source !== null) {
+            map.removeLayer(pin_source);
         }
 
         // Add the new source marker
-        pin_source = L.marker([lat, lng], { icon: pinIconSource }).addTo(map);
+        pin_source = L.marker([src_lat, src_lng], { icon: pinIconSource }).addTo(map);
 
         // Update the message and state
         isLoggingSource = false;
         document.getElementById('message-content').textContent = "MESSAGE: Source pin placed. Now log the destination.";
+        
+        // Handle button activity
+        // The source should have been logged, so disable source logging, 
+        // enable source clearing, enable destination logging
+        document.getElementById('src-log-coordinates-btn').disabled = true;
+        document.getElementById('src-clear-coordinates-btn').disabled = false;        
+        document.getElementById('dst-log-coordinates-btn').disabled = false;
+        document.getElementById('dst-clear-coordinates-btn').disabled = true;
+
     } else if (isLoggingDestination) {
-        // Log destination coordinates
-        document.getElementById('latitude').value = lat;
-        document.getElementById('longitude').value = lng;
+   
+        dst_lat = event.latlng.lat.toFixed(6); // Latitude with precision
+        dst_lng = event.latlng.lng.toFixed(6); // Longitude with precision
+
+        // Log destination coordinates to the input fields
+        document.getElementById('dst-latitude').value = dst_lat;
+        document.getElementById('dst-longitude').value = dst_lng;
 
         // Remove the previous destination marker, if any
         if (pin_destination !== null) {
@@ -176,11 +271,17 @@ map.on('click', function (event) {
         }
 
         // Add the new destination marker
-        pin_destination = L.marker([lat, lng], { icon: pinIconSource }).addTo(map);
+        pin_destination = L.marker([dst_lat, dst_lng], { icon: pinIconDestination }).addTo(map);
 
         // Update the message and state
         isLoggingDestination = false;
         document.getElementById('message-content').textContent = "MESSAGE: Destination pin placed.";
+    
+        // Handle button activity
+        document.getElementById('dst-log-coordinates-btn').disabled = true;
+        document.getElementById('dst-clear-coordinates-btn').disabled = false;
+        document.getElementById('results-btn').disabled = false;         
+
     } else {
         console.log("Not logging coordinates. Click ignored.");
     }
@@ -192,6 +293,67 @@ console.log("Map initialized and click listener attached.");
 
 
 
+// ===============================================================================
+function getResults() {
+// ===============================================================================
+
+    console.log("Get Results button pressed.");
+
+    src_latitude = document.getElementById('src-latitude').value
+    src_longitude = document.getElementById('src-longitude').value
+
+    dst_latitude = document.getElementById('dst-latitude').value
+    dst_longitude = document.getElementById('dst-longitude').value
+
+    const apiKey = '72b208aa687a46c499f328a96ab08d07';  // OpenCage API key
+    const src_url = `https://api.opencagedata.com/geocode/v1/json?q=${src_latitude}+${src_longitude}&key=${apiKey}`;
+    const dst_url = `https://api.opencagedata.com/geocode/v1/json?q=${dst_latitude}+${dst_longitude}&key=${apiKey}`;
+
+
+    // Source Date and Time
+    const srcDateTimeInput = document.getElementById('date-time');
+    const srcDateTimeValue = srcDateTimeInput.value;
+  
+
+    // Find Source Country
+    fetch(src_url)
+        .then(response => response.json())
+        .then(data => {
+            // Check if the result contains country information
+            if (data.results && data.results[0] && data.results[0].components.country) {
+                const src_country = data.results[0].components.country;
+                console.log("Source Country:", src_country);
+                document.getElementById('src-results').textContent = `${src_country} - ${srcDateTimeValue}`;
+                return src_country;
+            } else {
+                console.error("Country not found for the given coordinates.");
+                return null;
+            }
+        })
+        .catch(error => {
+            console.error("Error fetching data:", error);
+        });
+
+
+    // Find Destination Country
+    fetch(dst_url)
+        .then(response => response.json())
+        .then(data => {
+            // Check if the result contains country information
+            if (data.results && data.results[0] && data.results[0].components.country) {
+                const dst_country = data.results[0].components.country;
+                console.log("Destination Country:", dst_country);
+                document.getElementById('dst-results').textContent = dst_country;
+                return dst_country;
+            } else {
+                console.error("Country not found for the given coordinates.");
+                return null;
+            }
+        })
+        .catch(error => {
+            console.error("Error fetching data:", error);
+        });
+}
 
 
 // ===============================================================================

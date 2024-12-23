@@ -21,7 +21,7 @@ body {
 /* ******************************************************************************* */
 .container {
     width: 1130px;
-    height: 970px;
+    height: 905px;
     margin: 5px auto; /* Spacing from top of the page */
     position: relative;
     border: 1px solid #ccc;
@@ -65,6 +65,7 @@ body {
     gap: 10px;
     padding: 0px;
     border: 2px solid DarkMagenta;
+    height: 95px; /* Specify the exact height */	
 }
 
 .date-time-area p {
@@ -83,6 +84,16 @@ body {
 
 
 /* ******************************************************************************* */
+/* The Date and Time Selector                                 */
+/* ******************************************************************************* */
+.date-time-selector {
+    align-items: Left; /* Vertically align content */
+    gap: 5px; /* Space between label and input */
+    margin-top: 3px; /* Adds spacing between rows */
+    margin-bottom: 3px; /* Adds spacing between rows */
+}
+
+/* ******************************************************************************* */
 /* Coordinate Row for Latitude and Longitude                                       */
 /* ******************************************************************************* */
 
@@ -94,17 +105,21 @@ body {
 }
 
 .coordinate-row label {
-    flex: 0 0 80px; /* Set a fixed width for labels */
+    flex: 0 0 65px; /* Set a fixed width for labels */
     font-weight: normal;
 	font-size: 14px;	
 }
 
 .coordinate-row input {
     flex: 1; /* Allow the input field to grow and take the remaining space */
-    padding: 5px;
+	max-width: 80px;
+	padding: 3px; /* Impacts the height the input box takes up */
     font-size: 14px;
 }
 
+.results-row {
+	padding: 3px; /* Impacts the height the input box takes up */
+}
 
 /* ******************************************************************************* */
 /* The coordinate buttons and row                                                  */
@@ -112,12 +127,13 @@ body {
 .button-row {
     display: flex;           /* Enables Flexbox */
     justify-content: center; /* Horizontally centers the buttons */
-    gap: 10px;               /* Adds space between the buttons */
+    gap: 20px;               /* Adds space between the buttons */
+    margin-top: auto;        /* Pushes the element to the bottom within the flex container */
 }
 
 button {
     /*flex: 1; /* Makes both buttons take equal width */
-    padding: 5px;
+    padding: 3px; /* Padding around the text and the button perimeter */
     font-size: 14px;
     cursor: pointer;
 }
@@ -130,7 +146,7 @@ button {
     display: flex;
     position: relative;
     text-align: left;
-    padding: 5px;
+    padding: 3px;
     height: 18px; /* Set the specific height you want */	
     border: 4px dashed yellow; /* Visualizes text-area */
 	margin: 0 auto; /* Center horizontally in outer container */
@@ -144,7 +160,7 @@ button {
 .map-area {
     position: relative;
     text-align: center;
-    padding: 10px;
+    padding: 2px; /* White space around the map and the other containers */
     border: 1px dashed orange; /* Visualizes text-area */
     height: 690px; /* Set the specific height you want */
     width: 1025px; /* Set the specific height you want */
@@ -167,7 +183,7 @@ button {
     display: flex;
     /*position: relative;*/
     position: absolute;
-    bottom: 10px;
+    bottom: 5px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
