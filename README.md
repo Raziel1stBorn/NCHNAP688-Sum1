@@ -124,10 +124,27 @@ To aid decision making regarding colour schemes and design choices, I created a 
 
   
   ## Sprint 1
-  <br>
-  
+  By the end of the first sprint the Welcome page is built, featuring basic formatting and container areas for the Welcome message and links. Links to the Application page and the abf.co.uk site were present but without image buttons. The Application Page features three basic container areas for the Date/Time Entry, the map, and actions/links. The map is displaying and is interactive, although the code is basic, meaning it is not customised for this partiuclar application. No functionality exists on the map other than being able zoom in and out, and move around the map.      
+
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="/development_progress_images/sprint_1_welcome_end.jpg" alt="Image showing the welcome Page progress by the end of the first sprint." width="500" style="margin-right: 10px;"/>
+  <img src="/development_progress_images/sprint_1_app_end.jpg" alt="Image showing the App Page progress by the end of the first sprint" width="500"/>
+</div>
+
+
   ## Sprint 2
-  <br>
+  Limited developer resources and an overly optimitic schedule meant that the progress in sprint 2 was much less than expected. With the resources that were available, work was focussed on the Application page, and as such there were no developments regarding the Welcome Page. 
+<br>  
+  Work was started on being able to select the source location's date and time, and select the source location on the map, with a temporary pin image being created to show the souce. Page formatting developed beyond the original design as it became clear that three sections are needed for the selections, i.e. Source, Destination and Results. Also required was a button to log the source co-ordinates so that logically the program knows which mouse click is the one the user intends to log the source. In light of this it also became clear that a button was needed to be able to clear the source coordinates so the user could change their mind/correct a mistake. Elements which show the exact longitude and lattitude were included to provide clear evidence that coordinates had been logged. 
+<br><br>
+During development and use testing it became apparent that a way of communicating and feeding back to the user was needed. As such a dedicated 'MESSAGE' section was added. This message section dynamically provides both instructions, and feedback depending on what the user is currently doing.
+<br><br>
+Temporary button images were created and used for the three main actions at the bottom of the application. 
+
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="/development_progress_images/sprint_2_welcome_end.jpg" alt="Image showing the welcome Page progress by the end of the second sprint." width="500" style="margin-right: 10px;"/>
+  <img src="/development_progress_images/sprint_2_app_end.jpg" alt="Image showing the App Page progress by the end of the second sprint" width="500"/>
+</div>
   
   ## Sprint 3
 
