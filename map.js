@@ -299,16 +299,15 @@ function getResults() {
 
     console.log("Get Results button has been pressed.");
 
-    src_latitude = document.getElementById('src-latitude').value
-    src_longitude = document.getElementById('src-longitude').value
+    src_latitude = document.getElementById('src-latitude').value;
+    src_longitude = document.getElementById('src-longitude').value;
 
-    dst_latitude = document.getElementById('dst-latitude').value
-    dst_longitude = document.getElementById('dst-longitude').value
+    dst_latitude = document.getElementById('dst-latitude').value;
+    dst_longitude = document.getElementById('dst-longitude').value;
 
     const apiKey = '72b208aa687a46c499f328a96ab08d07';  // OpenCage API key
     const src_url = `https://api.opencagedata.com/geocode/v1/json?q=${src_latitude}+${src_longitude}&key=${apiKey}`;
     const dst_url = `https://api.opencagedata.com/geocode/v1/json?q=${dst_latitude}+${dst_longitude}&key=${apiKey}`;
-
 
     // Source Date and Time
     // 'date-time' refers to the date and time selector in the source column
@@ -319,48 +318,63 @@ function getResults() {
     // Debugging Logs
     console.log("Map initialized and click listener attached.");
 
-
-    // Find Source Country
+    // Find Source Country and Time Zone
     fetch(src_url)
-        .then(response => response.json())
-        .then(data => {
-            // Check if the result contains country information
-            if (data.results && data.results[0] && data.results[0].components.country) {
-                const src_country = data.results[0].components.country;
-                console.log("Source Country:", src_country);
-                console.log("Source Date Time:", srcFormattedDateTime);
-                document.getElementById('src-results').textContent = `${src_country} - ${srcFormattedDateTime}`;
-                return src_country;
-            } else {
-                console.error("Country not found for the given coordinates.");
-                return null;
-            }
-        })
-        .catch(error => {
-            console.error("Error fetching data:", error);
-        });
+    .then(response => response.json())
+    .then(data => {
+        if (data.results && data.results[0]) {
+            const components = data.results[0].components;
+            const src_country = components.country || "Unknown Country";
+            const src_town = components.town || components.city || components.village || "Unknown Town";
+            const src_street = components.road || "Unknown Street";
+            const src_timeZone = data.results[0].annotations.timezone.name;
 
+            console.log("Source Country:", src_country);
+            console.log("Source Town:", src_town);
+            console.log("Source Street:", src_street);
+            console.log("Source Time Zone:", src_timeZone);
+            console.log("Source Date Time:", srcFormattedDateTime);
 
-    // Find Destination Country
-    fetch(dst_url)
-        .then(response => response.json())
-        .then(data => {
-            // Check if the result contains country information
-            if (data.results && data.results[0] && data.results[0].components.country) {
-                const dst_country = data.results[0].components.country;
-                console.log("Destination Country:", dst_country);
-                document.getElementById('dst-results').textContent = dst_country;
-                return dst_country;
-            } else {
-                console.error("Country not found for the given coordinates.");
-                return null;
-            }
-        })
-        .catch(error => {
-            console.error("Error fetching data:", error);
-        });
+            document.getElementById('src-results').textContent = `${src_country}, ${src_town}, ${src_street} - ${srcFormattedDateTime}`;
+
+            // Find Destination Location (Detailed Information)
+            fetch(dst_url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.results && data.results[0]) {
+                        const components = data.results[0].components;
+                        const dst_country = components.country || "Unknown Country";
+                        const dst_town = components.town || components.city || components.village || "Unknown Town";
+                        const dst_street = components.road || "Unknown Street";
+                        const dst_timeZone = data.results[0].annotations.timezone.name;
+
+                        console.log("Destination Country:", dst_country);
+                        console.log("Destination Town:", dst_town);
+                        console.log("Destination Street:", dst_street);
+                        console.log("Destination Time Zone:", dst_timeZone);
+
+                        const dstFormattedDateTime = getEquivalentDateTime(
+                            srcDateTimeValue,
+                            src_timeZone,
+                            dst_timeZone
+                        );
+
+                        document.getElementById('dst-results').textContent = `${dst_country}, ${dst_town}, ${dst_street} - ${dstFormattedDateTime}`;
+                    } else {
+                        console.error("Detailed location not found for destination coordinates.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error fetching data for destination:", error);
+                });
+        } else {
+            console.error("Detailed location not found for source coordinates.");
+        }
+    })
+    .catch(error => {
+        console.error("Error fetching data for source:", error);
+    });
 }
-
 
 // ===============================================================================
 function formatDateTime(dateTime) {
@@ -374,6 +388,30 @@ function formatDateTime(dateTime) {
 
     return `${day}/${month}/${year} ${hours}:${minutes}`;
 }
+
+// ===============================================================================
+function getEquivalentDateTime(srcDateTimeValue, srcTimeZone, dstTimeZone) {
+// ===============================================================================
+    const srcDateObj = new Date(srcDateTimeValue);
+
+    const dstFormatter = new Intl.DateTimeFormat('en-GB', {
+        timeZone: dstTimeZone,
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        hourCycle: 'h23',
+    });
+
+    const formattedParts = dstFormatter.formatToParts(srcDateObj);
+    const formattedDateTime = `${formattedParts.find(p => p.type === 'day').value}/${formattedParts.find(p => p.type === 'month').value}/${formattedParts.find(p => p.type === 'year').value} ${formattedParts.find(p => p.type === 'hour').value}:${formattedParts.find(p => p.type === 'minute').value}`;
+
+    console.log("Equivalent Date-Time in Destination Time Zone:", formattedDateTime);
+
+    return formattedDateTime;
+}
+
 
 // ===============================================================================
 function saveAsImage() {
