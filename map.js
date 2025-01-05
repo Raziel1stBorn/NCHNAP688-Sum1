@@ -297,7 +297,7 @@ console.log("Map initialized and click listener attached.");
 function getResults() {
 // ===============================================================================
 
-    console.log("Get Results button pressed.");
+    console.log("Get Results button has been pressed.");
 
     src_latitude = document.getElementById('src-latitude').value
     src_longitude = document.getElementById('src-longitude').value
@@ -311,9 +311,14 @@ function getResults() {
 
 
     // Source Date and Time
+    // 'date-time' refers to the date and time selector in the source column
     const srcDateTimeInput = document.getElementById('date-time');
     const srcDateTimeValue = srcDateTimeInput.value;
-  
+    const srcFormattedDateTime = formatDateTime(srcDateTimeValue);
+
+    // Debugging Logs
+    console.log("Map initialized and click listener attached.");
+
 
     // Find Source Country
     fetch(src_url)
@@ -323,7 +328,8 @@ function getResults() {
             if (data.results && data.results[0] && data.results[0].components.country) {
                 const src_country = data.results[0].components.country;
                 console.log("Source Country:", src_country);
-                document.getElementById('src-results').textContent = `${src_country} - ${srcDateTimeValue}`;
+                console.log("Source Date Time:", srcFormattedDateTime);
+                document.getElementById('src-results').textContent = `${src_country} - ${srcFormattedDateTime}`;
                 return src_country;
             } else {
                 console.error("Country not found for the given coordinates.");
@@ -355,6 +361,19 @@ function getResults() {
         });
 }
 
+
+// ===============================================================================
+function formatDateTime(dateTime) {
+// ===============================================================================
+    const dateObj = new Date(dateTime);
+    const day = String(dateObj.getDate()).padStart(2, '0');
+    const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+    const year = dateObj.getFullYear();
+    const hours = String(dateObj.getHours()).padStart(2, '0');
+    const minutes = String(dateObj.getMinutes()).padStart(2, '0');
+
+    return `${day}/${month}/${year} ${hours}:${minutes}`;
+}
 
 // ===============================================================================
 function saveAsImage() {
