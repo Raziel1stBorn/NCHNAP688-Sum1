@@ -108,8 +108,8 @@ To aid decision making regarding colour schemes and design choices, I created a 
   
 | ID | Details                                                                  |
 | -- | ------------------------------------------------------------------------ |
-| 01 | User selects their country via clicking on a map                        |
-| 02 | Current date and time is shown for chosed timezone                       |
+| 01 | User selects their country via clicking on a map                         |
+| 02 | Current date and time is shown for chosen timezone                       |
 | 03 | User inputs a desired meeting date and time                              |
 | 04 | User clicks on destination country                                       |
 | 05 | Output shows what date and time that will be in the destination country  |
@@ -147,7 +147,20 @@ Temporary button images were created and used for the three main actions at the 
 </div>
   
   ## Sprint 3
+  In common with Sprint 2, Sprint 3 has suffered with lack of developer availabiity. As such the deadline of 4th January 2025 for MVP delivery has been missed. However, the project is still within the hard deadline of 17th January 2025. Although behind schedule, progress was made on the application page.
+    
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="/development_progress_images/sprint_3_welcome_mid.jpg" alt="Image showing the welcome Page progress during the third sprint." width="500" style="margin-right: 10px;"/>
+  <img src="/development_progress_images/sprint_3_app_mid.jpg" alt="Image showing the App Page progress during the third sprint" width="500"/>
+</div>
 
+Real column headings have been added to replace the placeholders. The means to select a second location have been implmented. The 'Results' section is displaying the First Location information, but the code has not yet been written to calculate and return the date and time for the Second Location. Changes were also made to frame sizes in an attempt to ensure that all elements are visible to the user on a 1920 x 1080 resoution display without the need for vertical scrolling. Naturally this will vary from user to user, depending on their personal display and browser setup. 
+<br>
+  It has been decided to extend the timeframe of this sprint. This due to feedback not yet being sought from a third-party user. Additionally it is clear that a 4th and possibly 5th sprint will be needed in order to deliver the MVP. <br>
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="/development_progress_images/sprint_3_progress_overview.jpg" alt="Image showing duration change to Iteration 3, and addition of Iteration 4" width="800" style="margin-right: 10px;"/>
+</div>
+  
 </details>
 
 
