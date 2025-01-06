@@ -160,7 +160,35 @@ Real column headings have been added to replace the placeholders. The means to s
 <div style="display: flex; justify-content: space-around; align-items: center;">
   <img src="/development_progress_images/sprint_3_progress_overview.jpg" alt="Image showing duration change to Iteration 3, and addition of Iteration 4" width="800" style="margin-right: 10px;"/>
 </div>
-  
+
+<br>
+The third sprint concluded by progressing the development of the index.html page and obtaining third-party user feedback. 
+<br>
+
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="/development_progress_images/sprint_3_welcome_end.jpg" alt="Image showing the welcome Page state at the end of the third sprint." width="500" style="margin-right: 10px;"/>
+  <img src="/development_progress_images/sprint_3_app_end.jpg" alt="Image showing the App Page progress at the end of the third sprint" width="500"/>
+</div>
+<br>
+Whilst progressing the index.html 'Welcome' page and reviewing branding style against the main ABF website, it became clear that the ABF site does not use images for the navigation buttons, instead favouring buttons styled using css. As such the welcome page design was altered to be more on brand.<br> 
+<br>
+<b>User testing yielded the following feedback points:</b><br><br>
+
+<ol>
+  <li>Confusion about <b>how to navigate the map</b>, user did not know about scroll wheel zoom function on hold to pan.</li><br>
+  <li>The <b>pin heads</b> are too large. (Note: These are temporary pins anyway)</li><br>
+  <li>There is <b>no link between the colour of the pin</b>b> and the source/destination location.</li><br>
+  <li>Query over why the 'Log Coordinates' <b>button is below the coordinates</b> and what the point of seeing the coordinates is if one can't type them in.</li><br>
+  <li>The <b>three buttons</b> at the bottom need new labels.</li><br>
+  <li>The <b>'MESSAGE' section</b> needs to be more visible.</li><br>
+</ol>
+
+  ## Sprint 4
+  This will be the last sprint and needs to address the feedback issues raised by the user, aswell as finalising the application page and documenting code testing. 
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="/development_progress_images/sprint_4_list.jpg" alt="Image showing sprint 4 to do items" width="800" style="margin-right: 10px;"/>
+</div> 
+  <hr>  
 </details>
 
 
@@ -171,7 +199,10 @@ Real column headings have been added to replace the placeholders. The means to s
 
 <details>
   <summary>Evaluation (Dedicated Section)</summary>
-- Content
+  Difficulties:
+  - Had not used this style of project management before
+  - At the start of the project I was not sure if I had the capability to be able to build it, possibly too ambitous. 
+  - Difficult to assign tickets and work with multiple branches when only one person is doing all of the work. 
 </details>
 
 <details>
