@@ -271,7 +271,7 @@ function formatDateTime(dateTime) {
     return `${day}/${month}/${year} ${hours}:${minutes}`;
 }
 
-module.exports = { formatDateTime };
+// module.exports = { formatDateTime }; // causes problems when hosted on GitHub 
 
 function getEquivalentDateTime(srcDateTimeValue, srcTimeZone, dstTimeZone) {
 // Get the date and time value for the participant location
