@@ -149,6 +149,12 @@ The following screenshots show the created <b>formatDateTime</b> function and ch
   <img src="/development_progress_images/tdd_4.jpg" alt="Image showing the code for the formatDateTime function." width="350" style="margin-right: 10px;"/>
   <img src="/development_progress_images/tdd_5.jpg" alt="Image showing the amended testing code to access the formatDatTime function" width="500"/>
 </div>
+<br>
+Running the test suite again after these changes, all tests ran successfully. <br>
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="/development_progress_images/tdd_6.jpg" alt="Image showing successful completion of formatDateTime function testing." width="500"/>
+</div>
+
   
   ## Sprint 1
   By the end of the first sprint the Welcome page is built, featuring basic formatting and container areas for the Welcome message and links. Links to the Application page and the abf.co.uk site were present but without image buttons. The Application Page features three basic container areas for the Date/Time Entry, the map, and actions/links. The map is displaying and is interactive, although the code is basic, meaning it is not customised for this partiuclar application. No functionality exists on the map other than being able zoom in and out, and move around the map.      
