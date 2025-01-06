@@ -9,6 +9,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jest": "^29.7.0"
+    "leaflet": "^1.9.4"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "leaflet": "<rootDir>/__mocks__/leaflet.js"
+    },
+    "testEnvironment": "jsdom"
   }
 }

@@ -1,7 +1,21 @@
-// ===============================================================================
-// Variables 
-// ===============================================================================
-// Global variables to hold the markers
+// ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+// IMPORTS
+// ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+const L = require('leaflet');
+
+// ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+// CONSTANTS & CONFIGURATIONS
+// ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+
+
+// ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+// VARIABLES (Global or Module Scope)
+// ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+
+// Define the variable with the message content
+let message = "MESSAGE: Please find your source location on the map, then click 'Log Coordinates' button.";
+
+// Pin Markers
 let pin_source = null;
 let pin_destination = null;
 
@@ -11,17 +25,7 @@ let src_lng = null;
 let dst_lat = null;
 let dst_lng = null;
 
-// Define the variable with the message content
-let message = "MESSAGE: Please find your source location on the map, then click 'Log Coordinates' button.";
-
-// State to track which pin the user is logging
-let isLoggingSource = false;
-let isLoggingDestination = false;
-
-
-// ===============================================================================
 // Load the custom icons for the source and destination pins
-// ===============================================================================
 var pinIconSource = L.icon({
     iconUrl: 'images/test_pin.png',  // Path to the source pin image
     iconSize: [48, 48],  // Dimensions of the image
@@ -29,15 +33,32 @@ var pinIconSource = L.icon({
 });
 
 var pinIconDestination = L.icon({
-    iconUrl: 'images/test_pin2.png',  // Path to the destination pin image
-    iconSize: [48, 48],  // Dimensions of the image
-    iconAnchor: [16, 32],  // The specific pixel location that will go over the selected spot 
+    iconUrl: 'images/test_pin2.png',  
+    iconSize: [48, 48],  
+    iconAnchor: [16, 32],   
 });
 
-// ===============================================================================
-// Function to set the default date and time to the current date and time
-// ===============================================================================
+// State to track which pin the user is logging
+let isLoggingSource = false;
+let isLoggingDestination = false;
+
+// Create the map and set the initial view and zoom level
+var map = L.map('map').setView([45, 10], 2); // [Latitude, Longitude], Zoom level
+
+// Add the tile layer (OpenStreetMap tiles in this case)
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 20, // Maximum zoom level
+    minZoom: 2,  // How far we can zoom out, 2 show most of the map with little duplication
+    attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+
+
+// ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+// FUNCTIONS
+// ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+
 function setDefaultDateTime() {
+// Set an opening date and time value in the date time picker
     const dateTimeInput = document.getElementById('date-time');
 
     // Get the current date and time
@@ -50,51 +71,13 @@ function setDefaultDateTime() {
     dateTimeInput.value = formattedDateTime;
 }
 
-// When the page loads, set the content of the message-area and set default date/time
-window.onload = function() {
-    // Set the message content
-    document.getElementById('message-content').innerText = message;
-
-    // Set the default date and time
-    setDefaultDateTime();
-
-    // Disable destination buttons and inputes on page load
-    document.getElementById('dst-log-coordinates-btn').disabled = true;
-    document.getElementById('dst-clear-coordinates-btn').disabled = true;    
-    document.getElementById('dst-latitude').disabled = true;
-    document.getElementById('dst-longitude').disabled = true;
-    document.getElementById('src-latitude').disabled = true;
-    document.getElementById('src-longitude').disabled = true;      
-    document.getElementById('results-btn').disabled = true;       
-    document.getElementById('src-clear-coordinates-btn').disabled = true;    
-};
-
-
-// ===============================================================================
-// Create the map and set the initial view and zoom level
-// ===============================================================================
-var map = L.map('map').setView([45, 10], 2); // [Latitude, Longitude], Zoom level
-
-// Add the tile layer (OpenStreetMap tiles in this case)
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 20, // Maximum zoom level
-    minZoom: 2,  // How far we can zoom out, 2 show most of the map with little duplication
-    attribution: '© OpenStreetMap contributors'
-}).addTo(map);
-
-
-// ===============================================================================
-// Function to enable coordinate logging for the source
-// ===============================================================================
 function srcEnableCoordinateLogging() {
+// Function to enable coordinate logging for the source
     console.log("Source: Log Coordinates Button Pressed."); 
 
     // Get the selected date and time value
     const dateTimeInput = document.getElementById('date-time');
     const messageElement = document.getElementById('message-content');
-
-    
-    
 
     // Check if a date and time have been selected
     if (!dateTimeInput.value) {
@@ -108,9 +91,7 @@ function srcEnableCoordinateLogging() {
     }
 }
 
-// ===============================================================================
 // Function to enable coordinate logging for the destination
-// ===============================================================================
 function dstEnableCoordinateLogging() {
     console.log("Destination: Log Coordinates Button Pressed.");    
     const messageElement = document.getElementById('message-content');
@@ -121,11 +102,8 @@ function dstEnableCoordinateLogging() {
     messageElement.textContent = "MESSAGE: Now left-click on the map where you want to place your destination pin.";
 }
 
-
-// ===============================================================================
-// Function to clear SOURCE coordinates
-// ===============================================================================
 function srcClearCoordinates() {
+// Function to clear SOURCE coordinates
     console.log("srcClearCoordinates function has been called.");
 
     // Clear the latitude and longitude input fields
@@ -166,18 +144,11 @@ function srcClearCoordinates() {
         pin_source = null;
         console.log("Source marker removed.");
     }
-   // if (pin_destination !== null) {
-   //     map.removeLayer(pin_destination);
-   //     pin_destination = null;
-   //     console.log("Destination marker removed.");
-   // } 
 }
 
 
-// ===============================================================================
-// Function to clear DESTINATION coordinates
-// ===============================================================================
 function dstClearCoordinates() {
+// Function to clear DESTINATION coordinates
     console.log("dstClearCoordinates function has been called.");
 
     // Clear the latitude and longitude input fields
@@ -217,14 +188,9 @@ function dstClearCoordinates() {
         pin_destination = null;
         console.log("Destination marker removed.");
     }
-   // if (pin_destination !== null) {
-   //     map.removeLayer(pin_destination);
-   //     pin_destination = null;
-   //     console.log("Destination marker removed.");
-   // } 
 }
 
-// ===============================================================================
+
 // Map click event listener
 // ===============================================================================
 map.on('click', function (event) {
@@ -287,15 +253,51 @@ map.on('click', function (event) {
     }
 });
 
+function formatDateTime(dateTime) {
+// Convert the date time into a more readable format	
+    const dateObj = new Date(dateTime);
 
-// Debugging Logs
-console.log("Map initialized and click listener attached.");
+    // Check if the date is invalid
+    if (isNaN(dateObj.getTime())) {
+        return 'Invalid Date';
+    }
+
+    const day = String(dateObj.getDate()).padStart(2, '0');
+    const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+    const year = dateObj.getFullYear();
+    const hours = String(dateObj.getHours()).padStart(2, '0');
+    const minutes = String(dateObj.getMinutes()).padStart(2, '0');
+
+    return `${day}/${month}/${year} ${hours}:${minutes}`;
+}
+
+module.exports = { formatDateTime };
+
+function getEquivalentDateTime(srcDateTimeValue, srcTimeZone, dstTimeZone) {
+// Get the date and time value for the participant location
+    const srcDateObj = new Date(srcDateTimeValue);
+
+    const dstFormatter = new Intl.DateTimeFormat('en-GB', {
+        timeZone: dstTimeZone,
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        hourCycle: 'h23',
+    });
+
+    const formattedParts = dstFormatter.formatToParts(srcDateObj);
+    const formattedDateTime = `${formattedParts.find(p => p.type === 'day').value}/${formattedParts.find(p => p.type === 'month').value}/${formattedParts.find(p => p.type === 'year').value} ${formattedParts.find(p => p.type === 'hour').value}:${formattedParts.find(p => p.type === 'minute').value}`;
+
+    console.log("Equivalent Date-Time in Destination Time Zone:", formattedDateTime);
+
+    return formattedDateTime;
+}
 
 
-
-// ===============================================================================
 function getResults() {
-// ===============================================================================
+// Perform the conversion
 
     console.log("Get Results button has been pressed.");
 
@@ -376,46 +378,8 @@ function getResults() {
     });
 }
 
-// ===============================================================================
-function formatDateTime(dateTime) {
-// ===============================================================================
-    const dateObj = new Date(dateTime);
-    const day = String(dateObj.getDate()).padStart(2, '0');
-    const month = String(dateObj.getMonth() + 1).padStart(2, '0');
-    const year = dateObj.getFullYear();
-    const hours = String(dateObj.getHours()).padStart(2, '0');
-    const minutes = String(dateObj.getMinutes()).padStart(2, '0');
-
-    return `${day}/${month}/${year} ${hours}:${minutes}`;
-}
-
-// ===============================================================================
-function getEquivalentDateTime(srcDateTimeValue, srcTimeZone, dstTimeZone) {
-// ===============================================================================
-    const srcDateObj = new Date(srcDateTimeValue);
-
-    const dstFormatter = new Intl.DateTimeFormat('en-GB', {
-        timeZone: dstTimeZone,
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        hourCycle: 'h23',
-    });
-
-    const formattedParts = dstFormatter.formatToParts(srcDateObj);
-    const formattedDateTime = `${formattedParts.find(p => p.type === 'day').value}/${formattedParts.find(p => p.type === 'month').value}/${formattedParts.find(p => p.type === 'year').value} ${formattedParts.find(p => p.type === 'hour').value}:${formattedParts.find(p => p.type === 'minute').value}`;
-
-    console.log("Equivalent Date-Time in Destination Time Zone:", formattedDateTime);
-
-    return formattedDateTime;
-}
-
-
-// ===============================================================================
 function saveAsImage() {
-// ===============================================================================
+// Save the details as an image 
 
     // Select the elements to capture
     const dateTimeArea = document.querySelector('.date-time-area');
@@ -447,3 +411,33 @@ function saveAsImage() {
         link.click(); // Simulate a click to trigger download
     });
 }
+
+// ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+// EXECUTION CODE 
+// ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+
+
+
+
+// ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+// EVENT HANDLER
+// ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+
+// When the page loads, set the content of the message-area and set default date/time
+window.onload = function() {
+    // Set the message content
+    document.getElementById('message-content').innerText = message;
+
+    // Set the default date and time
+    setDefaultDateTime();
+
+    // Disable destination buttons and inputes on page load
+    document.getElementById('dst-log-coordinates-btn').disabled = true;
+    document.getElementById('dst-clear-coordinates-btn').disabled = true;    
+    document.getElementById('dst-latitude').disabled = true;
+    document.getElementById('dst-longitude').disabled = true;
+    document.getElementById('src-latitude').disabled = true;
+    document.getElementById('src-longitude').disabled = true;      
+    document.getElementById('results-btn').disabled = true;       
+    document.getElementById('src-clear-coordinates-btn').disabled = true;    
+};

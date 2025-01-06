@@ -1,3 +1,8 @@
+jest.mock('leaflet');
+const leaflet = require('leaflet');
+// console.log(leaflet);
+const { formatDateTime } = require('./map');
+
 describe('formatDateTime', () => {
     test('Convert ISO 8601 date and time format to a DD/MM/YYYY HH:MM format correctly', () => {
         const input = '2025-01-17T23:59:00Z';
