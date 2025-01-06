@@ -77,7 +77,7 @@ To aid decision making regarding colour schemes and design choices, I created a 
   <summary>Project Management Tools (Dedicated Section)</summary>
 
 ## Project Management Tools
-
+<hr>
   The project management tool used is GitHub Projects. The Iterative Project Planning template was selected so that the iterations and sprints can be clearly shown and managed. There are three planned iterations:
 
   1) <b>Iteration 01</b><br>
@@ -101,6 +101,11 @@ To aid decision making regarding colour schemes and design choices, I created a 
   Setting out the basic tasks for the first iteration. 
   ![Image showing kanban style cards for To Do, In Progress, and Done.](/images/kanban_style_cards_iteration01.jpg)
 
+
+## Ticketing System / Labels
+
+  <hr>
+
 </details>
 
 <details>
@@ -120,8 +125,30 @@ To aid decision making regarding colour schemes and design choices, I created a 
 <details>
   <summary>MVP Build Process (Dedicated Section)</summary>
   <hr>
+  
+  ## Test-Driven Development
 
+  Test-driven development (TDD) is a strategy which involves coding automated tests for software functions, with those tests being designed and written before the programmer writes the actual code which will be tested (Janzen and Saiedian, 2005). This means that as soon as the function is built, there are automated tests ready, which may result in faster development and better code as the programmer is forced to think ahead about what the function will accept and output, and the conditions under which the function may fail. <br><br>
 
+Here is an example of TDD in action. As this application requires the user to select an initial date and time, the datetime-local HTML input type will be used. The value created by this is not formatted in a way which will be clear to most users, as such a function is needed to turn the value into a more accessible format. This unit test contains inputs in a variety of date time formats, as well as an invalid input type, it then checks if the result from the unwritten function matches the expected result. 
+<br>
+
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="/development_progress_images/tdd_1.jpg" alt="Image showing code for test-driven development." width="650"/>
+</div>
+<br>
+Running this test suite results in the following:<br>
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="/development_progress_images/tdd_2.jpg" alt="Image showing test failing." width="500" style="margin-right: 10px;"/>
+  <img src="/development_progress_images/tdd_3.jpg" alt="Image showing test suite failing results" width="200"/>
+</div>
+
+This is because the function does not exist, or is not accessible to the tests.<br><br>
+The following screenshots show the created <b>formatDateTime</b> function and changes to testing code to make the function accessible.<br>
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="/development_progress_images/tdd_4.jpg" alt="Image showing the code for the formatDateTime function." width="350" style="margin-right: 10px;"/>
+  <img src="/development_progress_images/tdd_5.jpg" alt="Image showing the amended testing code to access the formatDatTime function" width="500"/>
+</div>
   
   ## Sprint 1
   By the end of the first sprint the Welcome page is built, featuring basic formatting and container areas for the Welcome message and links. Links to the Application page and the abf.co.uk site were present but without image buttons. The Application Page features three basic container areas for the Date/Time Entry, the map, and actions/links. The map is displaying and is interactive, although the code is basic, meaning it is not customised for this partiuclar application. No functionality exists on the map other than being able zoom in and out, and move around the map.      
@@ -199,10 +226,11 @@ Whilst progressing the index.html 'Welcome' page and reviewing branding style ag
 
 <details>
   <summary>Evaluation (Dedicated Section)</summary>
-  Difficulties:
-  - Had not used this style of project management before
-  - At the start of the project I was not sure if I had the capability to be able to build it, possibly too ambitous. 
-  - Difficult to assign tickets and work with multiple branches when only one person is doing all of the work. 
+  Difficulties:<br>
+  - Had not used this style of project management before.<br>
+  - At the start of the project I was not sure if I had the capability to be able to build it, possibly too ambitous. <br>
+  - Difficult to assign tickets and work with multiple branches when only one person is doing all of the work. <br>
+  - How granular to make the tickets/requirements. 
 </details>
 
 <details>
@@ -217,7 +245,12 @@ Ferreira, J., Noble, J. and Biddle, R. (2007) 'Agile development iterations and 
           &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://ieeexplore-ieee-org.ezproxy.neu.edu/document/4293575  <br>
           &nbsp;&nbsp;&nbsp;&nbsp;(Accessed: 09 December 2024). <br>
 
-Microsoft Designer (n.d.) <iCreate images</i> [online]. <br> 
+Janzen, D. and Saiedian, H. (2005) 'Test-driven development concepts, taxonomy, and future direction', <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<i>Computer</i>, 38(9), pp.43-50 [online]. <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://doi-org.ezproxy.neu.edu/10.1109/MC.2005.314  <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;(Accessed: 06 January 2025). <br>          
+
+Microsoft Designer (n.d.) <i>Create images</i> [online]. <br> 
           &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://designer.microsoft.com/image-creator?scenario=texttoimage  <br>
           &nbsp;&nbsp;&nbsp;&nbsp;(Accessed: 14 December 2024). <br>
 
