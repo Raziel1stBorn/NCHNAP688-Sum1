@@ -27,15 +27,15 @@ let dst_lng = null;
 
 // Load the custom icons for the source and destination pins
 var pinIconSource = L.icon({
-    iconUrl: 'images/test_pin.png',  // Path to the source pin image
-    iconSize: [48, 48],  // Dimensions of the image
-    iconAnchor: [16, 32],  // The specific pixel location that will go over the selected spot 
+    iconUrl: 'images/location_pin.gif',  // Path to the source pin image
+    iconSize: [33, 46],  // Dimensions of the image
+    iconAnchor: [16, 46],  // The specific pixel location that will go over the selected spot 
 });
 
 var pinIconDestination = L.icon({
-    iconUrl: 'images/test_pin2.png',  
-    iconSize: [48, 48],  
-    iconAnchor: [16, 32],   
+    iconUrl: 'images/participant_pin.gif',  
+    iconSize: [33, 46],  
+    iconAnchor: [16, 46],   
 });
 
 // State to track which pin the user is logging
