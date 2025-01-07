@@ -14,7 +14,7 @@
 </details>
 
 # Time Zone Meeting Aid
-<a href="https://raziel1stborn.github.io/NCHNAP688-Sum1/" target="_blank" rel="noopener noreferrer">CLICK to access the live app</a>
+[CLICK to access the live app](https://raziel1stborn.github.io/NCHNAP688-Sum1/)
 
 <details>
   <summary>Summary/Introduction</summary>
