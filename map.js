@@ -27,15 +27,17 @@ let dst_lng = null;
 
 // Load the custom icons for the source and destination pins
 var pinIconSource = L.icon({
-    iconUrl: 'images/location_pin.gif',  // Path to the source pin image
+    iconUrl: 'https://raziel1stborn.github.io/NCHNAP688-Sum1/images/participant_pin.gif',  // Path to the source pin image
     iconSize: [33, 46],  // Dimensions of the image
     iconAnchor: [16, 46],  // The specific pixel location that will go over the selected spot 
+    crossOrigin: 'anonymous',    
 });
 
 var pinIconDestination = L.icon({
-    iconUrl: 'images/participant_pin.gif',  
+    iconUrl: 'https://raziel1stborn.github.io/NCHNAP688-Sum1/images/location_pin.gif',  
     iconSize: [33, 46],  
     iconAnchor: [16, 46],   
+    crossOrigin: 'anonymous',    
 });
 
 // State to track which pin the user is logging
@@ -107,8 +109,9 @@ function srcClearCoordinates() {
     console.log("srcClearCoordinates function has been called.");
 
     // Clear the latitude and longitude input fields
-    document.getElementById('src-latitude').value = "";
-    document.getElementById('src-longitude').value = "";
+    src_lat = ""; // document.getElementById('src-latitude').value = "";
+    src_lng = ""; // document.getElementById('src-longitude').value = "";
+    document.getElementById('results-btn').disabled = true;  
 
     // Reset source and destination coordinates
     src_lat = null;
@@ -152,9 +155,10 @@ function dstClearCoordinates() {
     console.log("dstClearCoordinates function has been called.");
 
     // Clear the latitude and longitude input fields
-    document.getElementById('dst-latitude').value = "";
-    document.getElementById('dst-longitude').value = "";
-
+    dst_lat = ""; // document.getElementById('dst-latitude').value = "";
+    dst_lng = ""; // document.getElementById('dst-longitude').value = "";
+    document.getElementById('results-btn').disabled = true;  
+    
     // Reset source and destination coordinates
     src_lat = null;
     src_lng = null;
@@ -199,8 +203,8 @@ map.on('click', function (event) {
         src_lng = event.latlng.lng.toFixed(6); // Longitude with precision
 
         // Log coordinates to the input fields
-        document.getElementById('src-latitude').value = src_lat;
-        document.getElementById('src-longitude').value = src_lng;
+        // document.getElementById('src-latitude').value = src_lat;
+        // document.getElementById('src-longitude').value = src_lng;
 
         // If a marker exists, remove it first
         if (pin_source !== null) {
@@ -228,8 +232,8 @@ map.on('click', function (event) {
         dst_lng = event.latlng.lng.toFixed(6); // Longitude with precision
 
         // Log destination coordinates to the input fields
-        document.getElementById('dst-latitude').value = dst_lat;
-        document.getElementById('dst-longitude').value = dst_lng;
+        // document.getElementById('dst-latitude').value = dst_lat;
+        // document.getElementById('dst-longitude').value = dst_lng;
 
         // Remove the previous destination marker, if any
         if (pin_destination !== null) {
@@ -297,22 +301,20 @@ function getEquivalentDateTime(srcDateTimeValue, srcTimeZone, dstTimeZone) {
 
 
 function getResults() {
-// Perform the conversion
-
+    // Perform the conversion
     console.log("Get Results button has been pressed.");
 
-    src_latitude = document.getElementById('src-latitude').value;
-    src_longitude = document.getElementById('src-longitude').value;
-
-    dst_latitude = document.getElementById('dst-latitude').value;
-    dst_longitude = document.getElementById('dst-longitude').value;
+    // Variables directly assigned for source and destination coordinates
+    const src_latitude = src_lat;
+    const src_longitude = src_lng;
+    const dst_latitude = dst_lat;
+    const dst_longitude = dst_lng;
 
     const apiKey = '72b208aa687a46c499f328a96ab08d07';  // OpenCage API key
     const src_url = `https://api.opencagedata.com/geocode/v1/json?q=${src_latitude}+${src_longitude}&key=${apiKey}`;
     const dst_url = `https://api.opencagedata.com/geocode/v1/json?q=${dst_latitude}+${dst_longitude}&key=${apiKey}`;
 
     // Source Date and Time
-    // 'date-time' refers to the date and time selector in the source column
     const srcDateTimeInput = document.getElementById('date-time');
     const srcDateTimeValue = srcDateTimeInput.value;
     const srcFormattedDateTime = formatDateTime(srcDateTimeValue);
@@ -320,63 +322,67 @@ function getResults() {
     // Debugging Logs
     console.log("Map initialized and click listener attached.");
 
-    // Find Source Country and Time Zone
+    // Fetch Source Location Information
     fetch(src_url)
-    .then(response => response.json())
-    .then(data => {
-        if (data.results && data.results[0]) {
-            const components = data.results[0].components;
-            const src_country = components.country || "Unknown Country";
-            const src_town = components.town || components.city || components.village || "Unknown Town";
-            const src_street = components.road || "Unknown Street";
-            const src_timeZone = data.results[0].annotations.timezone.name;
+        .then(response => response.json())
+        .then(data => {
+            if (data.results && data.results[0]) {
+                const components = data.results[0].components;
+                const src_country = components.country || "Unknown Country";
+                const src_town = components.town || components.city || components.village || "Unknown Town";
+                const src_street = components.road || "Unknown Street";
+                const src_timeZone = data.results[0].annotations.timezone.name;
 
-            console.log("Source Country:", src_country);
-            console.log("Source Town:", src_town);
-            console.log("Source Street:", src_street);
-            console.log("Source Time Zone:", src_timeZone);
-            console.log("Source Date Time:", srcFormattedDateTime);
+                //console.log("Source Country:", src_country);
+                //console.log("Source Town:", src_town);
+                console.log("Source Street:", src_street);
+                console.log("Source Time Zone:", src_timeZone);
+                console.log("Source Date Time:", srcFormattedDateTime);
 
-            document.getElementById('src-results').textContent = `${src_country}, ${src_town}, ${src_street} - ${srcFormattedDateTime}`;
+                // Update Source Results in the UI
+                //document.getElementById('src-results').textContent = `${src_country}, ${src_town}, ${src_street} - ${srcFormattedDateTime}`;
 
-            // Find Destination Location (Detailed Information)
-            fetch(dst_url)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.results && data.results[0]) {
-                        const components = data.results[0].components;
-                        const dst_country = components.country || "Unknown Country";
-                        const dst_town = components.town || components.city || components.village || "Unknown Town";
-                        const dst_street = components.road || "Unknown Street";
-                        const dst_timeZone = data.results[0].annotations.timezone.name;
+                // Fetch Destination Location Information
+                fetch(dst_url)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.results && data.results[0]) {
+                            const components = data.results[0].components;
+                            const dst_country = components.country || "Unknown Country";
+                            const dst_town = components.town || components.city || components.village || "Unknown Town";
+                            const dst_street = components.road || "Unknown Street";
+                            const dst_timeZone = data.results[0].annotations.timezone.name;
 
-                        console.log("Destination Country:", dst_country);
-                        console.log("Destination Town:", dst_town);
-                        console.log("Destination Street:", dst_street);
-                        console.log("Destination Time Zone:", dst_timeZone);
+                            console.log("Destination Country:", dst_country);
+                            console.log("Destination Town:", dst_town);
+                            console.log("Destination Street:", dst_street);
+                            console.log("Destination Time Zone:", dst_timeZone);
 
-                        const dstFormattedDateTime = getEquivalentDateTime(
-                            srcDateTimeValue,
-                            src_timeZone,
-                            dst_timeZone
-                        );
+                            const dstFormattedDateTime = getEquivalentDateTime(
+                                srcDateTimeValue,
+                                src_timeZone,
+                                dst_timeZone
+                            );
 
-                        document.getElementById('dst-results').textContent = `${dst_country}, ${dst_town}, ${dst_street} - ${dstFormattedDateTime}`;
-                    } else {
-                        console.error("Detailed location not found for destination coordinates.");
-                    }
-                })
-                .catch(error => {
-                    console.error("Error fetching data for destination:", error);
-                });
-        } else {
-            console.error("Detailed location not found for source coordinates.");
-        }
-    })
-    .catch(error => {
-        console.error("Error fetching data for source:", error);
-    });
+                            // Update Destination Results in the UI
+                            document.getElementById('dst-results').textContent = `${dst_country}, ${dst_town}, ${dst_street} - ${dstFormattedDateTime}`;
+                        } else {
+                            console.error("Detailed location not found for destination coordinates.");
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error fetching data for destination:", error);
+                    });
+            } else {
+                console.error("Detailed location not found for source coordinates.");
+            }
+        })
+        .catch(error => {
+            console.error("Error fetching data for source:", error);
+        });
 }
+
+
 
 function saveAsImage() {
 // Save the details as an image 
@@ -434,10 +440,10 @@ window.onload = function() {
     // Disable destination buttons and inputes on page load
     document.getElementById('dst-log-coordinates-btn').disabled = true;
     document.getElementById('dst-clear-coordinates-btn').disabled = true;    
-    document.getElementById('dst-latitude').disabled = true;
-    document.getElementById('dst-longitude').disabled = true;
-    document.getElementById('src-latitude').disabled = true;
-    document.getElementById('src-longitude').disabled = true;      
+    // document.getElementById('dst-latitude').disabled = true;
+    // document.getElementById('dst-longitude').disabled = true;
+    // document.getElementById('src-latitude').disabled = true;
+    // document.getElementById('src-longitude').disabled = true;      
     document.getElementById('results-btn').disabled = true;       
     document.getElementById('src-clear-coordinates-btn').disabled = true;    
 };

@@ -13,6 +13,7 @@ body {
     padding: 0;
     font-family: Verdana;
 	font-size: 14px;	
+    color: #9b9a9a; /* Text color */		
     height: 100vh;
 }
 
@@ -21,14 +22,14 @@ body {
 /* ******************************************************************************* */
 .container {
     width: 1130px;
-    height: 905px;
-    margin: 5px auto; /* Spacing from top of the page */
+    height: 870px;
+    margin: 15px auto; /* Reduced spacing from the top of the page */
     position: relative;
     border: 1px solid #ccc;
     background-color: rgba(255, 255, 255, 0.9); /* Slight white overlay */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     justify-content: center;	
-    outline: 2px solid blue; /* Visualizes container area */
+    outline: 2px solid rgba(155, 154, 154); /* Visualise container area */	
 }
 
 /* ******************************************************************************* */
@@ -38,8 +39,8 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 10px;
-    padding: 0px;
-    border: 2px solid olive;
+    padding: 3px;
+    /* border: 2px solid olive; */
 }
 
 .column-section {
@@ -47,7 +48,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 5px;
-	outline: 2px dotted olive; /* Visualizes container area */
+	/* outline: 2px dotted olive; /* Visualizes container area */
 }
 .column-section p {
     margin: 0; /* Remove default margin from <p> tags */
@@ -64,8 +65,8 @@ body {
     justify-content: space-between;
     gap: 10px;
     padding: 0px;
-    border: 2px solid DarkMagenta;
-    height: 95px; /* Specify the exact height */	
+    /* border: 8px solid DarkMagenta; */
+    height: 60px; /* Specify the exact height */	
 }
 
 .date-time-area p {
@@ -79,7 +80,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 5px;
-	outline: 2px dotted crimson; /* Visualizes container area */
+	/* outline: 2px dotted crimson; /* Visualizes container area */
 }
 
 
@@ -89,6 +90,7 @@ body {
 .date-time-selector {
     align-items: Left; /* Vertically align content */
     gap: 5px; /* Space between label and input */
+    margin-left: 3px; /* Adds spacing between rows */
     margin-top: 3px; /* Adds spacing between rows */
     margin-bottom: 3px; /* Adds spacing between rows */
 }
@@ -147,9 +149,11 @@ button {
     position: relative;
     text-align: left;
     padding: 3px;
-    height: 18px; /* Set the specific height you want */	
-    border: 4px dashed yellow; /* Visualizes text-area */
+    color: #d0043b; /* Text color */		
+    /* height: 25px; /* Set the specific height you want */	
 	margin: 0 auto; /* Center horizontally in outer container */
+    margin-top: 15px; /* Adds spacing between rows */
+    margin-bottom: 5px; /* Adds spacing between rows */	
 }
 
 
@@ -161,7 +165,7 @@ button {
     position: relative;
     text-align: center;
     padding: 2px; /* White space around the map and the other containers */
-    border: 1px dashed orange; /* Visualizes text-area */
+    /* border: 1px dashed orange; /* Visualizes text-area */
     height: 690px; /* Set the specific height you want */
     width: 1025px; /* Set the specific height you want */
     display: flex;
@@ -183,16 +187,15 @@ button {
     display: flex;
     /*position: relative;*/
     position: absolute;
-    bottom: 5px;
+    bottom: 0px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
     justify-content: center;	
-    padding:0px;
+    padding: 3px;
     width: 1045px;
-    height: 50px;	
-    border: 1px dashed SpringGreen;
-    background-color: rgba(255, 255, 255, 0.8);
+    /*border: 1px dashed SpringGreen;
+    background-color: rgba(255, 255, 255, 0.8);*/
 }
 
 .button img {
@@ -205,4 +208,29 @@ button {
 
 .button img:hover {
     opacity: 0.8;
+}
+
+
+/* ******************************************************************************* */
+/* Button format                                                                   */
+/* ******************************************************************************* */
+.abf-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #d0043b; /* The text colour */
+    text-decoration: none;
+    border: 2px solid #d0043b; /* The border colour */
+    border-radius: 0px; /* Corner radius */
+    background-color: transparent;
+    transition: all 0.3s ease;
+    margin-right: 80px; /* Adds space between buttons horizontally */	
+}
+
+.abf-button:hover {
+    color: #ffffff; 
+    background-color: #d0043b; 
+    cursor: pointer;
 }
