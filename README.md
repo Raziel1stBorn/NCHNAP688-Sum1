@@ -1,7 +1,3 @@
----
-layout: default
----
-
 <details>
   <summary>Assessment Details</summary>
 
