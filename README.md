@@ -17,48 +17,53 @@
 [CLICK to access the live app](https://raziel1stborn.github.io/NCHNAP688-Sum1/)
 
 <details>
-  <summary>Summary/Introduction</summary>
+  <summary>1. User and Technical Documentation</summary>
   <hr>
 
-  
-  ## Summary/Introduction
-  
-</details>
-  
-<details>
-  <summary>Product Proposal</summary>
-  <hr>
-  My employer is part of Associated British Foods plc, which is multi-national business with operations in 56 countries around the world (ABF, 2024). With colleagues in mutliple timezones, planning meetings with consideration and convenience can be challenging. My product proposal is for an easy to use application where users can set a location, date, and time, then select a second location, and the application will give the equivalent date and time for the secondary location.   
-  <hr>
-</details>
+  ## Prerequisites
 
-<details>
-  <summary>Development Approach</summary>
-  <hr>
+  List tools, libraries, frameworks required to run the project, e.g. node.js, npm
 
-  ## Development Approach
-  
-The development approach of this project will be itterative and agile, with an expectation of three sprints. A significant component of this product is the user interface (UI), an itterative agile approach allows for the testing of useable software and UI at earlier stages in the software development lifecycle, and results from this can lead to changes in development (Ferreira, Noble and Biddle, 2007). 
+  ## Installation Steps
+
+  Provide step-by-step instructions to clone the repository and set up the environment
+
+  ## APIs
+
+  Overview: Briefly explain the APIs used or created in the project<br>
+  Endpoints: Provide details about API endpoints, request/respponse formats, and example calls. 
+ 
   <hr>
 </details>
 
 
 <details>
-  <summary>Low-Fidelity Plan and Moodboard</summary>
+  <summary>2. Project Overview</summary>  
   <hr>
+  
+  ## Purpose
+  
+  My employer is part of Associated British Foods plc, which is multi-national business with operations in 56 countries around the world (ABF, 2024). With colleagues in mutliple timezones,     planning meetings with consideration and convenience can be challenging. My product proposal is for an easy to use application where users can set the date and time they would like the meeting, their location, and then select a second location relating to a meeting participant in another location. The application will give the equivalent date and time for the participants location, thus enabling the meeting organiser to see the relative date and time they are requesting.   
+  <br>
 
+  ## Technology Stack
+  
+  The primary technologies and frameworks used (e.g. Python, Javascript, SQL, APIs, etc)
+  <hr>
+</details>
+
+<details>
+  <summary>3. Product Design</summary>  
+  <hr>
+  
 ## Low-Fidelity Plan
 A low-fidelity flow for the application was prototyped using Figma and is available at [Figma.com](https://www.figma.com/proto/kTpbqRqdkA15Keu1uF1nJs/Summative-1?node-id=1-2&t=BiJiPwSoCtLmuO3u-1/).
 
-  <br>
-
 A welcome screen will provide the user with some basic information about the application, and will feature some appropriate imagry and branding.
 The user can start using the functionality of the application, or quit. As this is a web-based applicaiton, quitting will take them to the ABF homepage.
-
-  
+ 
   ![Image of Low-fidelity Figma mock up of the application.](/images/figma_low_fi_01.jpg)
 
-<br>
 
 ## Moodboard
 
@@ -68,13 +73,21 @@ To aid decision making regarding colour schemes and design choices, I created a 
 
 
 
-
-
-  <hr>  
+  <hr>
 </details>
 
 <details>
-  <summary>Project Management Tools (Dedicated Section)</summary>
+  <summary>4. Project Planning</summary>
+  <hr>
+
+  ## Development Approach
+  
+The development approach of this project will be itterative and agile, with an expectation of three sprints. A significant component of this product is the user interface (UI), an itterative agile approach allows for the testing of useable software and UI at earlier stages in the software development lifecycle, and results from this can lead to changes in development (Ferreira, Noble and Biddle, 2007). 
+  <hr>
+</details>
+
+<details>
+  <summary>5. Project Management Tools (Dedicated Section)</summary>
 
 ## Project Management Tools
 <hr>
@@ -108,53 +121,11 @@ To aid decision making regarding colour schemes and design choices, I created a 
 
 </details>
 
-<details>
-  <summary>Requirement Capture</summary>
-  
-| ID | Details                                                                  |
-| -- | ------------------------------------------------------------------------ |
-| 01 | User selects their country via clicking on a map                         |
-| 02 | Current date and time is shown for chosen timezone                       |
-| 03 | User inputs a desired meeting date and time                              |
-| 04 | User clicks on destination country                                       |
-| 05 | Output shows what date and time that will be in the destination country  |
-| 06 | User can print a reminder card                                           |
 
-</details>
 
 <details>
-  <summary>MVP Build Process (Dedicated Section)</summary>
+  <summary>6. MVP Build Process (Dedicated Section)</summary>
   <hr>
-  
-  ## Test-Driven Development
-
-  Test-driven development (TDD) is a strategy which involves coding automated tests for software functions, with those tests being designed and written before the programmer writes the actual code which will be tested (Janzen and Saiedian, 2005). This means that as soon as the function is built, there are automated tests ready, which may result in faster development and better code as the programmer is forced to think ahead about what the function will accept and output, and the conditions under which the function may fail. <br><br>
-
-Here is an example of TDD in action. As this application requires the user to select an initial date and time, the datetime-local HTML input type will be used. The value created by this is not formatted in a way which will be clear to most users, as such a function is needed to turn the value into a more accessible format. This unit test contains inputs in a variety of date time formats, as well as an invalid input type, it then checks if the result from the unwritten function matches the expected result. 
-<br>
-
-<div style="display: flex; justify-content: space-around; align-items: center;">
-  <img src="/development_progress_images/tdd_1.jpg" alt="Image showing code for test-driven development." width="650"/>
-</div>
-<br>
-Running this test suite results in the following:<br>
-<div style="display: flex; justify-content: space-around; align-items: center;">
-  <img src="/development_progress_images/tdd_2.jpg" alt="Image showing test failing." width="500" style="margin-right: 10px;"/>
-  <img src="/development_progress_images/tdd_3.jpg" alt="Image showing test suite failing results" width="200"/>
-</div>
-
-This is because the function does not exist, or is not accessible to the tests.<br><br>
-The following screenshots show the created <b>formatDateTime</b> function and changes to testing code to make the function accessible.<br>
-<div style="display: flex; justify-content: space-around; align-items: center;">
-  <img src="/development_progress_images/tdd_4.jpg" alt="Image showing the code for the formatDateTime function." width="350" style="margin-right: 10px;"/>
-  <img src="/development_progress_images/tdd_5.jpg" alt="Image showing the amended testing code to access the formatDatTime function" width="500"/>
-</div>
-<br>
-Running the test suite again after these changes, all tests ran successfully. <br>
-<div style="display: flex; justify-content: space-around; align-items: center;">
-  <img src="/development_progress_images/tdd_6.jpg" alt="Image showing successful completion of formatDateTime function testing." width="500"/>
-</div>
-
   
   ## Sprint 1
   By the end of the first sprint the Welcome page is built, featuring basic formatting and container areas for the Welcome message and links. Links to the Application page and the abf.co.uk site were present but without image buttons. The Application Page features three basic container areas for the Date/Time Entry, the map, and actions/links. The map is displaying and is interactive, although the code is basic, meaning it is not customised for this partiuclar application. No functionality exists on the map other than being able zoom in and out, and move around the map.      
@@ -224,14 +195,42 @@ Whilst progressing the index.html 'Welcome' page and reviewing branding style ag
   <hr>  
 </details>
 
-
-
 <details>
-  <summary>User and Technical Documentation</summary>
+  <summary>7. Testing and Test-Driven Development</summary>
+
+  ## Test-Driven Development
+
+  Test-driven development (TDD) is a strategy which involves coding automated tests for software functions, with those tests being designed and written before the programmer writes the actual code which will be tested (Janzen and Saiedian, 2005). This means that as soon as the function is built, there are automated tests ready, which may result in faster development and better code as the programmer is forced to think ahead about what the function will accept and output, and the conditions under which the function may fail. <br><br>
+
+Here is an example of TDD in action. As this application requires the user to select an initial date and time, the datetime-local HTML input type will be used. The value created by this is not formatted in a way which will be clear to most users, as such a function is needed to turn the value into a more accessible format. This unit test contains inputs in a variety of date time formats, as well as an invalid input type, it then checks if the result from the unwritten function matches the expected result. 
+<br>
+
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="/development_progress_images/tdd_1.jpg" alt="Image showing code for test-driven development." width="650"/>
+</div>
+<br>
+Running this test suite results in the following:<br>
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="/development_progress_images/tdd_2.jpg" alt="Image showing test failing." width="500" style="margin-right: 10px;"/>
+  <img src="/development_progress_images/tdd_3.jpg" alt="Image showing test suite failing results" width="200"/>
+</div>
+
+This is because the function does not exist, or is not accessible to the tests.<br><br>
+The following screenshots show the created <b>formatDateTime</b> function and changes to testing code to make the function accessible.<br>
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="/development_progress_images/tdd_4.jpg" alt="Image showing the code for the formatDateTime function." width="350" style="margin-right: 10px;"/>
+  <img src="/development_progress_images/tdd_5.jpg" alt="Image showing the amended testing code to access the formatDatTime function" width="500"/>
+</div>
+<br>
+Running the test suite again after these changes, all tests ran successfully. <br>
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="/development_progress_images/tdd_6.jpg" alt="Image showing successful completion of formatDateTime function testing." width="500"/>
+</div>
+
 </details>
 
 <details>
-  <summary>Evaluation (Dedicated Section)</summary>
+  <summary>8. Evaluation (Dedicated Section)</summary>
   Difficulties:<br>
   - Had not used this style of project management before.<br>
   - At the start of the project I was not sure if I had the capability to be able to build it, possibly too ambitous. <br>
@@ -240,7 +239,7 @@ Whilst progressing the index.html 'Welcome' page and reviewing branding style ag
 </details>
 
 <details>
-  <summary>References</summary>
+  <summary>9. References</summary>
   <hr>
 ABF (2024) <i>Where we operate</i> [online].<br>  
           &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://www.abf.co.uk/about-us/where-we-operate  <br>
