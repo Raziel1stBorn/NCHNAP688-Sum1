@@ -83,7 +83,83 @@ To aid decision making regarding colour schemes and design choices, I created a 
   ## Development Approach
   
 The development approach of this project will be itterative and agile, with an expectation of three sprints. A significant component of this product is the user interface (UI), an itterative agile approach allows for the testing of useable software and UI at earlier stages in the software development lifecycle, and results from this can lead to changes in development (Ferreira, Noble and Biddle, 2007). 
+
+
+  ## Features and Branches
+  
+<table>
+  <thead>
+    <tr>
+      <th>Page/Branch</th>
+      <th>Feature</th>
+      <th>Detail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Welcome (index.html)</td>
+      <td>Page Set Up</td>
+      <td>Create page with basic layout.</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>Background Image</td>
+      <td>Create and place the image.</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>Instructional Text</td>
+      <td>Write and place the instructional text.</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>Buttons</td>
+      <td>Add buttons and test link functionality.</td>
+    </tr>
+    <tr>
+      <td>Application (app.html)</td>
+      <td>Page Set Up</td>
+      <td>Create page with basic layout.</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>Map</td>
+      <td>Get a map to display.</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>Your Location</td>
+      <td>Build functionality for selecting a date and time, logging and clearing a location.</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>Participant Location</td>
+      <td>Build functionality for selecting a location for the meeting participant.</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>Results</td>
+      <td>Build functionality for obtaining the particpants date and time.</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>Message Section</td>
+      <td>Write code to appropriately update the message section with user prompts.</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>Buttons</td>
+      <td>Add in buttons and build functionality for the the 'Another' and 'Exit' buttons.</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>Save Feature</td>
+      <td>Build functionality to save an image of the selected locations.</td>
+    </tr>
+  </tbody>
+</table>
   <hr>
+  
 </details>
 
 <details>
