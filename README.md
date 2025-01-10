@@ -83,19 +83,26 @@ To aid decision making regarding colour schemes and design choices, I created a 
   ## Development Approach
   
 The development approach of this project will be itterative and agile, with an expectation of three sprints. A significant component of this product is the user interface (UI), an itterative agile approach allows for the testing of useable software and UI at earlier stages in the software development lifecycle, and results from this can lead to changes in development (Ferreira, Noble and Biddle, 2007). 
-
+<br><br>
 
   ## Features and Branches
+
+In addition to the 'main' branch, there will be three additional branches, containing the features as shown in the table below. The names of the branches relate to the distinct areas of the project, Documentation, Welcome, Application.   
   
 <table>
   <thead>
     <tr>
-      <th>Page/Branch</th>
+      <th>Branch/Page</th>
       <th>Feature</th>
       <th>Detail</th>
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>Documentation</td>
+      <td>Development Images</td>
+      <td>Upload development images for use in README.md.</td>
+    </tr>
     <tr>
       <td>Welcome (index.html)</td>
       <td>Page Set Up</td>
@@ -158,15 +165,22 @@ The development approach of this project will be itterative and agile, with an e
     </tr>
   </tbody>
 </table>
+  <br><br>
+
+  ## Ticketing System / Labels
+
+  As per the assignment criteria, one ticket is one feature, corresponding to one branch and one pull request. 
+  
   <hr>
   
 </details>
 
 <details>
   <summary>5. Project Management Tools (Dedicated Section)</summary>
+  <hr>
 
 ## Project Management Tools
-<hr>
+
   The project management tool used is GitHub Projects. The Iterative Project Planning template was selected so that the iterations and sprints can be clearly shown and managed. There are three planned iterations:
 
   1) <b>Iteration 01</b><br>
@@ -186,15 +200,13 @@ The development approach of this project will be itterative and agile, with an e
   The iterations as configured and shown in GitHub projects. 
   ![Image of GitHub projects iteration planning.](/images/github_projects_iterations.jpg)
 
-
   Setting out the basic tasks for the first iteration. 
   ![Image showing kanban style cards for To Do, In Progress, and Done.](/images/kanban_style_cards_iteration01.jpg)
 
 
-## Ticketing System / Labels
+
 
   <hr>
-
 </details>
 
 
@@ -252,10 +264,10 @@ The third sprint concluded by progressing the development of the index.html page
 <br>
 Whilst progressing the index.html 'Welcome' page and reviewing branding style against the main ABF website, it became clear that the ABF site does not use images for the navigation buttons, instead favouring buttons styled using css. As such the welcome page design was altered to be more on brand.<br> 
 <br>
-<b>User testing yielded the following feedback points:</b><br><br>
+<b>At this point user testing was conducted. Testing was in the form of moderated usability testing, where I sat with the user whilst they used the application, observing them, answering their questions and asking them questions about the app. User testing yielded the following insights:</b><br><br>
 
 <ol>
-  <li>Confusion about <b>how to navigate the map</b>, user did not know about scroll wheel zoom function on hold to pan.</li><br>
+  <li>Confusion about <b>how to navigate the map</b>, user did not know about scroll wheel zoom function and hold to pan.</li><br>
   <li>The <b>pin heads</b> are too large. (Note: These are temporary pins anyway)</li><br>
   <li>There is <b>no link between the colour of the pin</b> and the source/destination location.</li><br>
   <li>Query over why the 'Log Coordinates' <b>button is below the coordinates</b> and what the point of seeing the coordinates is if one can't type them in.</li><br>
