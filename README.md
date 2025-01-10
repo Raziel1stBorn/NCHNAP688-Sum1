@@ -260,7 +260,7 @@ Whilst progressing the index.html 'Welcome' page and reviewing branding style ag
   <li>There is <b>no link between the colour of the pin</b> and the source/destination location.</li><br>
   <li>Query over why the 'Log Coordinates' <b>button is below the coordinates</b> and what the point of seeing the coordinates is if one can't type them in.</li><br>
   <li>The <b>three buttons</b> at the bottom need new labels.</li><br>
-  <li>The <b>'MESSAGE'</b>b> section needs to be more visible.</li><br>
+  <li>The <b>'MESSAGE'</b> section needs to be more visible.</li><br>
 </ol>
 
   ## Sprint 4
