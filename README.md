@@ -170,7 +170,41 @@ In addition to the 'main' branch, there will be three additional branches, conta
   ## Ticketing System / Labels
 
   As per the assignment criteria, one ticket is one feature, corresponding to one branch and one pull request. 
+  <br><br>
+  To standardise tickets and encourage good practice of providing relevant information and context, templates will be used for tickets, with bug :trollface: :hammer: tickets having a different template to feature tickets.
+  <br><br>
+
+  ### Feature Ticket Template
+
+| Ticket Section      | Description                                                                          |
+| ------------------- | ------------------------------------------------------------------------------------ |
+| Title               | Write the Feature ID, followed by a short unique description                         |
+| What                | What is being implemented/fixed                                                      |
+| Why                 | Why is this needed                                                                   |
+| Outcome             | What is the expected behaviour/result of this change                                 |
+| Acceptance Criteria | What needs to be true for this change to be approved and merged with the main branch |
+
+Also included will be who the ticket is assigned to, and any labels. 
+
+
+  ### Bug Ticket Template
+
+| Ticket Section      | Description                                                                                                                |
+| ------------------- | ------------------------------------------------------------------------------------                                       |
+| Title               | Write the Feature ID, followed by a short unique indicator of the bug                                                      |
+| What Happens        | Describe the nature of the bug, including a screenshot if possible                                                         |
+| What Should Happen  | Describe what the normal/expected behaviour is                                                                             |
+| Impact              | Describe the impact of this bug, and why it is important to resolve it                                                     |
+| Steps to Reproduce  | Describe how to reproduce the occurance of the bug so it can be investigated i.e. what you did/were doing when it happened |
+
+Also included will be who the ticket is assigned to, and any labels. 
+  <br><br>
+  ### Labels
   
+  I created the following custom labels in GitHub projects to help classify and identify ticket purpose.
+ <br><br>
+ ![Image showing custom GitHub Projects labels created for this project.](/development_progress_images/custom_labels_01.jpg)
+  <br><br>
   <hr>
   
 </details>
@@ -264,7 +298,10 @@ The third sprint concluded by progressing the development of the index.html page
 <br>
 Whilst progressing the index.html 'Welcome' page and reviewing branding style against the main ABF website, it became clear that the ABF site does not use images for the navigation buttons, instead favouring buttons styled using css. As such the welcome page design was altered to be more on brand.<br> 
 <br>
-<b>At this point user testing was conducted. Testing was in the form of moderated usability testing, where I sat with the user whilst they used the application, observing them, answering their questions and asking them questions about the app. User testing yielded the following insights:</b><br><br>
+
+### User Testing
+
+At this point user testing was conducted. Testing was in the form of moderated usability testing, where I sat with the user whilst they used the application, observing them, answering their questions and asking them questions about the app. User testing yielded the following insights:<br><br>
 
 <ol>
   <li>Confusion about <b>how to navigate the map</b>, user did not know about scroll wheel zoom function and hold to pan.</li><br>
