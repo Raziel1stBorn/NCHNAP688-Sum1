@@ -199,6 +199,12 @@ Also included will be who the ticket is assigned to, and any labels.
 
 Also included will be who the ticket is assigned to, and any labels. 
   <br><br>
+
+Here is an example of a bug ticket.
+
+  <img src="/development_progress_images/bug_example.jpg" alt="Image showing a filled in bug ticket." width="800"/>
+
+  
   ### Labels
   
   I created the following custom labels in GitHub projects to help classify and identify ticket purpose.
