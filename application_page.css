@@ -43,6 +43,22 @@ body {
     /* border: 2px solid olive; */
 }
 
+/* The 'Your Location' text for colour change operation */
+.locText {
+    color: #9b9a9a; /* The default ABF Grey Shade */
+}
+
+/* The 'Participant Location' text for colour change operation */
+.parLocText {
+    color: #9b9a9a; /* The default ABF Grey Shade */
+}
+
+/* The 'Participant Date Time' text for colour change operation */
+.parDtTimeText {
+    color: #9b9a9a; /* The default ABF Grey Shade */
+}
+
+
 .column-section {
     flex: 1;
     display: flex;

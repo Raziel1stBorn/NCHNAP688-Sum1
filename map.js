@@ -127,8 +127,8 @@ function srcClearCoordinates() {
     // Set button interaction states
     document.getElementById('src-log-coordinates-btn').disabled = false;
     document.getElementById('src-clear-coordinates-btn').disabled = false;    
-    document.getElementById('src-results').textContent = ''    
-    document.getElementById('dst-results').textContent = ''
+    //document.getElementById('src-results').textContent = ''    
+    //document.getElementById('dst-results').textContent = ''
 
 
     // Clear the message
@@ -147,6 +147,15 @@ function srcClearCoordinates() {
         pin_source = null;
         console.log("Source marker removed.");
     }
+
+    // Change 'Your Location' text colour back to ABF grey
+    const srcLocationHeader = document.querySelector('.locText');
+    if (srcLocationHeader) {
+        srcLocationHeader.style.color = '#9b9a9a'; 
+    }
+
+    // Clear the results date and time
+    document.getElementById('dst-dtresults').textContent = ``;
 }
 
 
@@ -173,8 +182,8 @@ function dstClearCoordinates() {
     // Set button interaction states
     document.getElementById('dst-log-coordinates-btn').disabled = false;
     document.getElementById('dst-clear-coordinates-btn').disabled = false;    
-    document.getElementById('src-results').textContent = ''    
-    document.getElementById('dst-results').textContent = ''  
+    //document.getElementById('src-results').textContent = ''    
+    //document.getElementById('dst-results').textContent = ''  
 
     // Clear the message
     const messageElement = document.getElementById('message-content');
@@ -192,6 +201,22 @@ function dstClearCoordinates() {
         pin_destination = null;
         console.log("Destination marker removed.");
     }
+
+    // Change 'Participant Location' text colour back to ABF grey
+    const srcLocationHeader = document.querySelector('.parLocText');
+    if (srcLocationHeader) {
+        srcLocationHeader.style.color = '#9b9a9a'; 
+    }
+
+    // Change 'Participant Location' text colour back to ABF grey
+    const srcParticipantHeader = document.querySelector('.parDtTimeText');
+    if (srcParticipantHeader) {
+        srcParticipantHeader.style.color = '#9b9a9a'; 
+    }    
+
+    // Clear the results date and time and location text
+    document.getElementById('dst-dtresults').textContent = ``;
+    document.getElementById('dst-location').textContent = ``;
 }
 
 
@@ -202,10 +227,6 @@ map.on('click', function (event) {
         src_lat = event.latlng.lat.toFixed(6); // Latitude with precision
         src_lng = event.latlng.lng.toFixed(6); // Longitude with precision
 
-        // Log coordinates to the input fields
-        // document.getElementById('src-latitude').value = src_lat;
-        // document.getElementById('src-longitude').value = src_lng;
-
         // If a marker exists, remove it first
         if (pin_source !== null) {
             map.removeLayer(pin_source);
@@ -214,6 +235,12 @@ map.on('click', function (event) {
         // Add the new source marker
         pin_source = L.marker([src_lat, src_lng], { icon: pinIconSource }).addTo(map);
 
+        // Change the text color of "Your Location" (locText)
+        const srcLocationHeader = document.querySelector('.locText');
+        if (srcLocationHeader) {
+            srcLocationHeader.style.color = '#d0043b'; // Apply the Red ABF hex color
+        }
+    
         // Update the message and state
         isLoggingSource = false;
         document.getElementById('message-content').textContent = "MESSAGE: Source pin placed. Now log the destination.";
@@ -242,6 +269,16 @@ map.on('click', function (event) {
 
         // Add the new destination marker
         pin_destination = L.marker([dst_lat, dst_lng], { icon: pinIconDestination }).addTo(map);
+
+        // Change the text color of "Participant Location" (parLocText)
+        const srcParticipantHeader = document.querySelector('.parLocText');
+        if (srcParticipantHeader) {
+            srcParticipantHeader.style.color = '#0a8b31'; // Apply the Green ABF hex color
+        }
+        const srcParticipantDT = document.querySelector('.parDtTimeText');
+        if (srcParticipantDT) {
+            srcParticipantDT.style.color = '#0a8b31'; // Apply the Green ABF hex color
+        }
 
         // Update the message and state
         isLoggingDestination = false;
@@ -319,7 +356,7 @@ function getResults() {
     const srcDateTimeValue = srcDateTimeInput.value;
     const srcFormattedDateTime = formatDateTime(srcDateTimeValue);
 
-    // Debugging Logs
+    // Debugging Log
     console.log("Map initialized and click listener attached.");
 
     // Fetch Source Location Information
@@ -458,14 +495,6 @@ function saveAsImage() {
         link.click(); // Simulate a click to trigger download
     });
 }
-
-
-
-// ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
-// EXECUTION CODE 
-// ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
-
-
 
 
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
