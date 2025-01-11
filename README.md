@@ -312,6 +312,12 @@ At this point user testing was conducted. Testing was in the form of moderated u
   <li>The <b>'MESSAGE'</b> section needs to be more visible.</li><br>
 </ol>
 
+Based on the user testing I was able to create the below empathy map, which can aid the developer to be more in touch with the user's experience of the app and what their needs are. 
+  
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="/development_progress_images/empathy_map_1.jpg" alt="Empathy map created following user testing." width="700"/>
+</div>
+
   ## Sprint 4
   This will be the last sprint and needs to address the feedback issues raised by the user, aswell as finalising the application page and documenting code testing. 
 <div style="display: flex; justify-content: space-around; align-items: center;">
