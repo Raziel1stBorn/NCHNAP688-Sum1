@@ -46,62 +46,28 @@
 					<button id="src-log-coordinates-btn" onclick="srcEnableCoordinateLogging()">Log Coordinates</button>
 					<button id="src-clear-coordinates-btn" onclick="srcClearCoordinates()">Clear Coordinates</button>
 				</div>
-   
-				<!-- Coordinate Display -->
-				<!--<div class="coordinates-display">
-					<div class="coordinate-row">
-						<label for="src-latitude">Latitude:</label>
-						<input type="text" id="src-latitude" readonly>
-						<label for="src-longitude">Longitude:</label>
-						<input type="text" id="src-longitude" readonly>
-					</div>
-				</div> -->
-			
+		
 			</div>
-
-
 
 			<!-- TARGET LOCATION COLUMN -->
 			<div class="column">
 				<!-- Coordinate Logging Buttons -->
 				<div class="button-row">
+					<div id="dst-location">&nbsp;</div>
+				</div>
+				<div class="button-row">
 					<button id="dst-log-coordinates-btn" onclick="dstEnableCoordinateLogging()">Log Coordinates</button>
 					<button id="dst-clear-coordinates-btn" onclick="dstClearCoordinates()">Clear Coordinates</button>
-				</div>
-				
-				<div class="button-row">
 					<button id="results-btn" onclick="getResults()">Results</button>
 				</div>
-				
-				<!-- Date and Time Selector
-				<div class="results-row">
-					<label for="date-time">Batman</label>
-					 <input type="datetime-local" id="date-time">
-				</div> -->
-   
-				<!-- Coordinate Display
-				<div class="coordinates-display">
-					<div class="coordinate-row">
-						<label for="dst-latitude">Latitude:</label>
-						<input type="text" id="dst-latitude" readonly>
-						<label for="dst-longitude">Longitude:</label>
-						<input type="text" id="dst-longitude" readonly>
-					</div>
-				</div> -->
-				
-
-			
 			</div>
-
-
-
 
 			<!-- Results -->
 			<div class="column">
 				<div class="results-row">
-					<div id="src-results">&nbsp;</div>
+					<div id="dst-dtresults">&nbsp;</div>	
 					<div>&nbsp;</div>
-					<div id="dst-results">&nbsp;</div>				
+					<div>&nbsp;</div>				
 				</div>
 			</div>
 		</div>

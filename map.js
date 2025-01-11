@@ -365,7 +365,8 @@ function getResults() {
                             );
 
                             // Update Destination Results in the UI
-                            document.getElementById('dst-results').textContent = `${dst_country}, ${dst_town}, ${dst_street} - ${dstFormattedDateTime}`;
+                            document.getElementById('dst-dtresults').textContent = `${dstFormattedDateTime}`;
+                            document.getElementById('dst-location').textContent = `${dst_country}, ${dst_town}, ${dst_street}`;
                         } else {
                             console.error("Detailed location not found for destination coordinates.");
                         }
@@ -385,20 +386,60 @@ function getResults() {
 
 
 function saveAsImage() {
-// Save the details as an image 
-
-    // Select the elements to capture
+    /**
+    * Captures specified areas of the webpage and saves them as a PNG image.
+    *
+    * This function combines the `.column-heading-area`, `.date-time-area`, and `.map-area`
+    * into a single snapshot image. Buttons in the `.date-time-area` are excluded, and
+    * date-time pickers are replaced with formatted text before rendering.
+    *
+    * Dependencies:
+    * - `html2canvas`: Used to capture the snapshot and generate a PNG image.
+    *
+    * Steps:
+    * 1. Select and clone the relevant DOM elements.
+    * 2. Modify the cloned elements as needed (e.g., remove buttons, format date-time).
+    * 3. Append the modified clones to a temporary container for rendering.
+    * 4. Capture the container as an image using `html2canvas`.
+    * 5. Trigger a download of the generated image.
+    *
+    * @returns {void} This function triggers a download and does not return a value.
+    */    
+    
+    // Elements on the App.html page to capture
+    const columnHeadingArea = document.querySelector('.column-heading-area');
     const dateTimeArea = document.querySelector('.date-time-area');
     const mapArea = document.querySelector('.map-area');
 
-    // Create a container to combine the two areas into one snapshot
+    // Create a container to combine the areas into one snapshot
     const container = document.createElement('div');
     container.style.display = 'inline-block';
     container.style.position = 'relative';
 
-    // Clone the content of dateTimeArea and mapArea into the container
+    // Clone the content of each area into the container
+    const clonedColumnHeadingArea = columnHeadingArea.cloneNode(true);
     const clonedDateTimeArea = dateTimeArea.cloneNode(true);
     const clonedMapArea = mapArea.cloneNode(true);
+
+    // Remove all buttons from the cloned dateTimeArea
+    const buttons = clonedDateTimeArea.querySelectorAll('button');
+    buttons.forEach(button => button.remove());
+
+    // Process the cloned date-time picker
+    const originalDateTimePicker = dateTimeArea.querySelector('input[type="datetime-local"]');
+    const clonedDateTimePicker = clonedDateTimeArea.querySelector('input[type="datetime-local"]');
+
+    if (originalDateTimePicker && clonedDateTimePicker) {
+        const formattedDateTime = formatDateTime(originalDateTimePicker.value);
+
+        // Replace the cloned input with a text node displaying the formatted date
+        const textNode = document.createElement('div');
+        textNode.textContent = formattedDateTime;
+        clonedDateTimePicker.parentNode.replaceChild(textNode, clonedDateTimePicker);
+    }
+
+    // Append the cloned elements to the container in the desired order
+    container.appendChild(clonedColumnHeadingArea);
     container.appendChild(clonedDateTimeArea);
     container.appendChild(clonedMapArea);
 
@@ -417,6 +458,8 @@ function saveAsImage() {
         link.click(); // Simulate a click to trigger download
     });
 }
+
+
 
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 // EXECUTION CODE 
