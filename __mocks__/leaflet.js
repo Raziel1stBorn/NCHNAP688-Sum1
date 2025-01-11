@@ -14,4 +14,5 @@ module.exports = {
     tileLayer: jest.fn(() => ({
         addTo: jest.fn()
     })),
-};
+}; 
+

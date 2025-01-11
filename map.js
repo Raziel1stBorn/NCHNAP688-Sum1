@@ -1,11 +1,23 @@
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
-// IMPORTS
+// Testing
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
-// const L = require('leaflet');  // Not needed when hosted on GitHub
+/**  IMPORTANT
+* Captures specified areas of the webpage and saves them as a PNG image.
+* The following code is required for NPM Testing offline, but will cause
+* the application to fail if published to GitHub, so comment out before
+* uploading the code. 
+*/  
+// Import required library
+const L = require('leaflet');  // Not needed when hosted on GitHub
 
-// ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
-// CONSTANTS & CONFIGURATIONS
-// ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+// Export functions
+module.exports = { 
+    formatDateTime, 
+    setDefaultDateTime, 
+    srcEnableCoordinateLogging, 
+    dstEnableCoordinateLogging, 
+    srcClearCoordinates
+}; 
 
 
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
@@ -25,6 +37,28 @@ let src_lng = null;
 let dst_lat = null;
 let dst_lng = null;
 
+// Variables to denote if the pin will be placed on click or not
+// global.isLoggingSource = false;
+// global.isLoggingDestination = false;
+// window.isLoggingSource = false;
+// window.isLoggingDestination = false;
+
+if (typeof window !== 'undefined') {
+    // Browser-specific code
+    console.log("Running in a browser environment");
+    window.isLoggingSource = false; // Use window for browser
+    window.isLoggingDestination = false;
+} else if (typeof global !== 'undefined') {
+    // Node.js-specific code
+    console.log("Running in a Node.js environment");
+    global.isLoggingSource = false; // Use global for Node.js
+    global.isLoggingDestination = false;
+} else {
+    console.error("Unknown environment");
+}
+
+
+
 // Load the custom icons for the source and destination pins
 var pinIconSource = L.icon({
     iconUrl: 'https://raziel1stborn.github.io/NCHNAP688-Sum1/images/participant_pin.gif',  // Path to the source pin image
@@ -40,9 +74,6 @@ var pinIconDestination = L.icon({
     crossOrigin: 'anonymous',    
 });
 
-// State to track which pin the user is logging
-let isLoggingSource = false;
-let isLoggingDestination = false;
 
 // Create the map and set the initial view and zoom level
 var map = L.map('map').setView([45, 10], 2); // [Latitude, Longitude], Zoom level
@@ -73,13 +104,20 @@ function setDefaultDateTime() {
     dateTimeInput.value = formattedDateTime;
 }
 
+
+
 function srcEnableCoordinateLogging() {
-// Function to enable coordinate logging for the source
-    console.log("Source: Log Coordinates Button Pressed."); 
+    console.log("Source: Log Coordinates Button Pressed.");
 
     // Get the selected date and time value
     const dateTimeInput = document.getElementById('date-time');
     const messageElement = document.getElementById('message-content');
+
+    // Check if the date-time input and message element exist
+    if (!dateTimeInput || !messageElement) {
+        console.error("Required DOM elements are missing.");
+        return;
+    }
 
     // Check if a date and time have been selected
     if (!dateTimeInput.value) {
@@ -88,7 +126,8 @@ function srcEnableCoordinateLogging() {
     } else {
         // If a date and time are selected, proceed with coordinate logging
         isLoggingSource = true;
-        isLoggingDestination = false;        
+        isLoggingDestination = false;
+        console.log("isLoggingSource:", isLoggingSource, "isLoggingDestination:", isLoggingDestination);
         messageElement.textContent = "MESSAGE: Now left-click on the map where you want to place your source pin.";
     }
 }
@@ -104,32 +143,25 @@ function dstEnableCoordinateLogging() {
     messageElement.textContent = "MESSAGE: Now left-click on the map where you want to place your destination pin.";
 }
 
+
 function srcClearCoordinates() {
-// Function to clear SOURCE coordinates
     console.log("srcClearCoordinates function has been called.");
 
     // Clear the latitude and longitude input fields
-    src_lat = ""; // document.getElementById('src-latitude').value = "";
-    src_lng = ""; // document.getElementById('src-longitude').value = "";
-    document.getElementById('results-btn').disabled = true;  
-
-    // Reset source and destination coordinates
-    src_lat = null;
-    src_lng = null;
+    global.src_lat = null;
+    global.src_lng = null;
+    document.getElementById('results-btn').disabled = true;
 
     console.log("Source Coordinates cleared.");
 
     // Reset the logging state
-    isLoggingSource = false;
-    //isLoggingDestination = false;
+    global.isLoggingSource = false;
+
     console.log("Source logging state reset.");
 
     // Set button interaction states
     document.getElementById('src-log-coordinates-btn').disabled = false;
-    document.getElementById('src-clear-coordinates-btn').disabled = false;    
-    //document.getElementById('src-results').textContent = ''    
-    //document.getElementById('dst-results').textContent = ''
-
+    document.getElementById('src-clear-coordinates-btn').disabled = false;
 
     // Clear the message
     const messageElement = document.getElementById('message-content');
@@ -142,16 +174,16 @@ function srcClearCoordinates() {
     }
 
     // Remove the markers from the map, if they exist
-    if (pin_source !== null) {
-        map.removeLayer(pin_source);
-        pin_source = null;
+    if (global.pin_source !== null) {
+        global.map.removeLayer(global.pin_source);  // Remove the marker layer from the map
+        global.pin_source = null;  // Explicitly set to null
         console.log("Source marker removed.");
     }
 
-    // Change 'Your Location' text colour back to ABF grey
+    // Change 'Your Location' text color back to ABF grey
     const srcLocationHeader = document.querySelector('.locText');
     if (srcLocationHeader) {
-        srcLocationHeader.style.color = '#9b9a9a'; 
+        srcLocationHeader.style.color = '#9b9a9a';
     }
 
     // Clear the results date and time
@@ -159,18 +191,17 @@ function srcClearCoordinates() {
 }
 
 
+
+
 function dstClearCoordinates() {
 // Function to clear DESTINATION coordinates
     console.log("dstClearCoordinates function has been called.");
 
     // Clear the latitude and longitude input fields
-    dst_lat = ""; // document.getElementById('dst-latitude').value = "";
-    dst_lng = ""; // document.getElementById('dst-longitude').value = "";
+    dst_lat = null; // document.getElementById('dst-latitude').value = "";
+    dst_lng = null; // document.getElementById('dst-longitude').value = "";
     document.getElementById('results-btn').disabled = true;  
     
-    // Reset source and destination coordinates
-    src_lat = null;
-    src_lng = null;
 
     console.log("Destination Coordinates cleared.");
 
@@ -312,7 +343,7 @@ function formatDateTime(dateTime) {
     return `${day}/${month}/${year} ${hours}:${minutes}`;
 }
 
-// module.exports = { formatDateTime }; // causes problems when hosted on GitHub 
+
 
 function getEquivalentDateTime(srcDateTimeValue, srcTimeZone, dstTimeZone) {
 // Get the date and time value for the participant location

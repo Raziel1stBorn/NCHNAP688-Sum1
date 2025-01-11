@@ -4,7 +4,7 @@
   "description": "Software Engineering - Summative 1",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +19,12 @@
     "moduleNameMapper": {
       "leaflet": "<rootDir>/__mocks__/leaflet.js"
     },
-    "testEnvironment": "jsdom"
+    "testEnvironment": "jsdom",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "./map.js",
+      "!**/node_modules/**"
+    ],
+    "coverageReporters": ["text", "lcov", "html"]
   }
 }
