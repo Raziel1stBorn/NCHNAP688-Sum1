@@ -8,7 +8,7 @@
 * uploading the code. 
 */  
 // Import required library
-const L = require('leaflet');  // Not needed when hosted on GitHub
+/*const L = require('leaflet');  // Not needed when hosted on GitHub
 
 // Export functions
 module.exports = { 
@@ -16,8 +16,10 @@ module.exports = {
     setDefaultDateTime, 
     srcEnableCoordinateLogging, 
     dstEnableCoordinateLogging, 
-    srcClearCoordinates
-}; 
+    srcClearCoordinates,
+    dstClearCoordinates,
+    saveAsImage
+}; */
 
 
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
@@ -194,27 +196,23 @@ function srcClearCoordinates() {
 
 
 function dstClearCoordinates() {
-// Function to clear DESTINATION coordinates
     console.log("dstClearCoordinates function has been called.");
 
-    // Clear the latitude and longitude input fields
-    dst_lat = null; // document.getElementById('dst-latitude').value = "";
-    dst_lng = null; // document.getElementById('dst-longitude').value = "";
-    document.getElementById('results-btn').disabled = true;  
     
+    // Clear the latitude and longitude input fields
+    global.dst_lat = null; // Explicitly set global variables
+    global.dst_lng = null;
+    document.getElementById('results-btn').disabled = true;  
 
     console.log("Destination Coordinates cleared.");
 
     // Reset the logging state
-    isLoggingDestination = false;
-    //isLoggingDestination = false;
+    global.isLoggingDestination = false;
     console.log("Destination logging state reset.");
 
     // Set button interaction states
     document.getElementById('dst-log-coordinates-btn').disabled = false;
     document.getElementById('dst-clear-coordinates-btn').disabled = false;    
-    //document.getElementById('src-results').textContent = ''    
-    //document.getElementById('dst-results').textContent = ''  
 
     // Clear the message
     const messageElement = document.getElementById('message-content');
@@ -227,19 +225,18 @@ function dstClearCoordinates() {
     }
 
     // Remove the markers from the map, if they exist
-    if (pin_destination !== null) {
-        map.removeLayer(pin_destination);
-        pin_destination = null;
+    if (global.pin_destination !== null) {
+        global.map.removeLayer(global.pin_destination);
+        global.pin_destination = null;
         console.log("Destination marker removed.");
     }
 
-    // Change 'Participant Location' text colour back to ABF grey
+    // Change 'Participant Location' text color back to ABF grey
     const srcLocationHeader = document.querySelector('.parLocText');
     if (srcLocationHeader) {
         srcLocationHeader.style.color = '#9b9a9a'; 
     }
 
-    // Change 'Participant Location' text colour back to ABF grey
     const srcParticipantHeader = document.querySelector('.parDtTimeText');
     if (srcParticipantHeader) {
         srcParticipantHeader.style.color = '#9b9a9a'; 
@@ -249,6 +246,7 @@ function dstClearCoordinates() {
     document.getElementById('dst-dtresults').textContent = ``;
     document.getElementById('dst-location').textContent = ``;
 }
+
 
 
 // Map click event listener
