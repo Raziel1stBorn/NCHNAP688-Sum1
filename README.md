@@ -67,7 +67,7 @@ The user can start using the functionality of the application, or quit. As this 
 
 ## Moodboard
 
-To aid decision making regarding colour schemes and design choices, I created a moodboard. This was made up from screen snippets of solid colours snapped from abf.co.uk, I then identified the HEX and RGB values of these colours for easy reference when it comes to formatting the visuals of the applicaiton. A list of CSS web safe fonts was obtained from w3schools.com (2024), these were added to the moodboard and Verdana was chosen for the application font as it is stylistically complementary to the font used for the Associated British Foods plc name. An AI generated image of the globe was created using Microsoft Designer (n.d.) as it is free to use and avoids any licensing issues.            
+To aid decision making regarding colour schemes and design choices, I created a moodboard. This was made up from screen snippets of solid colours snapped from abf.co.uk, I then identified the HEX and RGB values of these colours for easy reference when it comes to formatting the visuals of the applicaiton. A list of CSS web safe fonts was obtained from [w3schools.com](https://www.w3schools.com/cssref/css_websafe_fonts.php) these were added to the moodboard and Verdana was chosen for the application font as it is stylistically complementary to the font used for the Associated British Foods plc name. An AI generated image of the globe was created using Microsoft Designer(https://designer.microsoft.com/image-creator?scenario=texttoimage) as it is free to use and avoids any licensing issues.            
 
   ![Image of moodboard showing colour and font design elements.](/images/mood_board.png)
 
@@ -82,7 +82,7 @@ To aid decision making regarding colour schemes and design choices, I created a 
 
   ## Development Approach
   
-The development approach of this project will be itterative and agile, with an expectation of three sprints. A significant component of this product is the user interface (UI), an itterative agile approach allows for the testing of useable software and UI at earlier stages in the software development lifecycle, and results from this can lead to [changes in development](https://ieeexplore-ieee-org.ezproxy.neu.edu/document/4293575). 
+The development approach of this project will be itterative and agile, with an expectation of three sprints. A significant component of this product is the user interface (UI), an [itterative agile approach](https://ieeexplore-ieee-org.ezproxy.neu.edu/document/4293575) allows for the testing of useable software and UI at earlier stages in the software development lifecycle, and results from this can lead to changes in development. 
 <br><br>
 
   ## Features and Branches
@@ -337,7 +337,7 @@ Based on the user testing I was able to create the below empathy map, which can 
 
   ## Test-Driven Development
 
-  Test-driven development (TDD) is a strategy which involves coding automated tests for software functions, with those tests being designed and written before the programmer writes the actual code which will be tested (Janzen and Saiedian, 2005). This means that as soon as the function is built, there are automated tests ready, which may result in faster development and better code as the programmer is forced to think ahead about what the function will accept and output, and the conditions under which the function may fail. <br><br>
+  [Test-driven development](https://doi-org.ezproxy.neu.edu/10.1109/MC.2005.314) (TDD) is a strategy which involves coding automated tests for software functions, with those tests being designed and written before the programmer writes the actual code which will be tested. This means that as soon as the function is built, there are automated tests ready, which may result in faster development and better code as the programmer is forced to think ahead about what the function will accept and output, and the conditions under which the function may fail. <br><br>
 
 Here is an example of TDD in action. As this application requires the user to select an initial date and time, the datetime-local HTML input type will be used. The value created by this is not formatted in a way which will be clear to most users, as such a function is needed to turn the value into a more accessible format. This unit test contains inputs in a variety of date time formats, as well as an invalid input type, it then checks if the result from the unwritten function matches the expected result. 
 <br>
@@ -373,29 +373,4 @@ Running the test suite again after these changes, all tests ran successfully. <b
   - At the start of the project I was not sure if I had the capability to be able to build it, possibly too ambitous. <br>
   - Difficult to assign tickets and work with multiple branches when only one person is doing all of the work. <br>
   - How granular to make the tickets/requirements. 
-</details>
-
-<details>
-  <summary>9. References</summary>
-  <hr>
-
-
-Ferreira, J., Noble, J. and Biddle, R. (2007) 'Agile development iterations and UI design', <br> 
-          &nbsp;&nbsp;&nbsp;&nbsp;<i>Proceedings of the Agile 2007 Agile Development Conference.</i> 13-17 August 2007, Washington, DC.  
-          &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://ieeexplore-ieee-org.ezproxy.neu.edu/document/4293575  <br>
-          &nbsp;&nbsp;&nbsp;&nbsp;(Accessed: 09 December 2024). <br>
-
-Janzen, D. and Saiedian, H. (2005) 'Test-driven development concepts, taxonomy, and future direction', <br>
-          &nbsp;&nbsp;&nbsp;&nbsp;<i>Computer</i>, 38(9), pp.43-50 [online]. <br>
-          &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://doi-org.ezproxy.neu.edu/10.1109/MC.2005.314  <br>
-          &nbsp;&nbsp;&nbsp;&nbsp;(Accessed: 06 January 2025). <br>          
-
-Microsoft Designer (n.d.) <i>Create images</i> [online]. <br> 
-          &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://designer.microsoft.com/image-creator?scenario=texttoimage  <br>
-          &nbsp;&nbsp;&nbsp;&nbsp;(Accessed: 14 December 2024). <br>
-
-w3schools.com (2024) <i>CSS web safe fonts</i> [online]. <br> 
-          &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://www.w3schools.com/cssref/css_websafe_fonts.php  <br>
-          &nbsp;&nbsp;&nbsp;&nbsp;(Accessed: 14 December 2024). <br><br>
-  
 </details>
