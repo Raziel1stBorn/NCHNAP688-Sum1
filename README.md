@@ -43,7 +43,7 @@
   
   ## Purpose
   
-  My employer is part of Associated British Foods plc, which is multi-national business with operations in 56 countries around the world (ABF, 2024). With colleagues in mutliple timezones,     planning meetings with consideration and convenience can be challenging. My product proposal is for an easy to use application where users can set the date and time they would like the meeting, their location, and then select a second location relating to a meeting participant in another location. The application will give the equivalent date and time for the participants location, thus enabling the meeting organiser to see the relative date and time they are requesting.   
+  My employer is part of Associated British Foods plc, which is multi-national business with operations in [56 countries around the world](https://www.abf.co.uk/about-us/where-we-operate). With colleagues in mutliple timezones,     planning meetings with consideration and convenience can be challenging. My product proposal is for an easy to use application where users can set the date and time they would like the meeting, their location, and then select a second location relating to a meeting participant in another location. The application will give the equivalent date and time for the participants location, thus enabling the meeting organiser to see the relative date and time they are requesting.   
   <br>
 
   ## Technology Stack
@@ -82,7 +82,7 @@ To aid decision making regarding colour schemes and design choices, I created a 
 
   ## Development Approach
   
-The development approach of this project will be itterative and agile, with an expectation of three sprints. A significant component of this product is the user interface (UI), an itterative agile approach allows for the testing of useable software and UI at earlier stages in the software development lifecycle, and results from this can lead to changes in development (Ferreira, Noble and Biddle, 2007). 
+The development approach of this project will be itterative and agile, with an expectation of three sprints. A significant component of this product is the user interface (UI), an itterative agile approach allows for the testing of useable software and UI at earlier stages in the software development lifecycle, and results from this can lead to [changes in development](https://ieeexplore-ieee-org.ezproxy.neu.edu/document/4293575). 
 <br><br>
 
   ## Features and Branches
@@ -378,9 +378,7 @@ Running the test suite again after these changes, all tests ran successfully. <b
 <details>
   <summary>9. References</summary>
   <hr>
-ABF (2024) <i>Where we operate</i> [online].<br>  
-          &nbsp;&nbsp;&nbsp;&nbsp;Available at: https://www.abf.co.uk/about-us/where-we-operate  <br>
-          &nbsp;&nbsp;&nbsp;&nbsp;(Accessed: 09 December 2024). <br><br>
+
 
 Ferreira, J., Noble, J. and Biddle, R. (2007) 'Agile development iterations and UI design', <br> 
           &nbsp;&nbsp;&nbsp;&nbsp;<i>Proceedings of the Agile 2007 Agile Development Conference.</i> 13-17 August 2007, Washington, DC.  
