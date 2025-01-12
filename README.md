@@ -350,6 +350,12 @@ Whilst the app is functional in the developer's environment, the code still requ
   <img src="/development_progress_images/sprint_4_test_coverage.jpg" alt="Image showing test coverage." width="600"/>
 </div>
 
+<br>
+
+A lighthouse report yielded positive results on performance, accessibility and best practices, with scores all in the upper 90's. Accessibility improvements recommend greater contrast between elements   
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="/development_progress_images/lighthouse_25_01_12.jpg" alt="Lighthouse report." width="600"/>
+</div>
 
 
   <hr>  
