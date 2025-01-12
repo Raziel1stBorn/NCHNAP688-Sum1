@@ -329,11 +329,40 @@ Based on the user testing I was able to create the below empathy map, which can 
 <div style="display: flex; justify-content: space-around; align-items: center;">
   <img src="/development_progress_images/sprint_4_list.jpg" alt="Image showing sprint 4 to do items" width="800" style="margin-right: 10px;"/>
 </div> 
+
+<br>
+
+At the end of this sprint the app appearance was as shown below.
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="/development_progress_images/sprint_4_welcome_1.jpg" alt="Image showing the Welcome page at the end of the Sprint 4." width="500" style="margin-right: 10px;"/>
+  <img src="/development_progress_images/sprint_4_app_1.jpg" alt="Image showing the app page at the end of Sprint 4" width="500"/>
+</div>
+<br>
+
+The app was also producing and downloading an image.<br>
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="/development_progress_images/date_time_meeting_snapshot (10).png" alt="Showing example downloaded image from app" width="500" style="margin-right: 10px;"/>
+</div>
+<br>
+
+Whilst the app is functional in the developer's environment, the code still requires more testing and has limited test coverage. 
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="/development_progress_images/sprint_4_test_coverage.jpg" alt="Image showing test coverage." width="600"/>
+</div>
+
+<br>
+
+A lighthouse report yielded positive results on performance, accessibility and best practices, with scores all in the upper 90's. Accessibility improvements recommend greater contrast between elements   
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="/development_progress_images/lighthouse_25_01_12.jpg" alt="Lighthouse report." width="600"/>
+</div>
+
+
   <hr>  
 </details>
 
 <details>
-  <summary>7. Testing and Test-Driven Development</summary>
+  <summary>7. Test-Driven Development</summary>
 
   ## Test-Driven Development
 
@@ -363,8 +392,8 @@ Running the test suite again after these changes, all tests ran successfully. <b
 <div style="display: flex; justify-content: space-around; align-items: center;">
   <img src="/development_progress_images/tdd_6.jpg" alt="Image showing successful completion of formatDateTime function testing." width="500"/>
 </div>
-
 </details>
+
 
 <details>
   <summary>8. Evaluation (Dedicated Section)</summary>
