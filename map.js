@@ -2,13 +2,13 @@
 // Testing
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 /**  IMPORTANT
-* Captures specified areas of the webpage and saves them as a PNG image.
 * The following code is required for NPM Testing offline, but will cause
 * the application to fail if published to GitHub, so comment out before
 * uploading the code. 
 */  
 // Import required library
-/*const L = require('leaflet');  // Not needed when hosted on GitHub
+
+/*const L = require('leaflet');
 
 // Export functions
 module.exports = { 
