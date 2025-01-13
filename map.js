@@ -149,14 +149,14 @@ function srcClearCoordinates() {
     console.log("srcClearCoordinates function has been called.");
 
     // Clear the latitude and longitude input fields
-    global.src_lat = null;
-    global.src_lng = null;
+    src_lat = null;
+    src_lng = null;
     document.getElementById('results-btn').disabled = true;
 
     console.log("Source Coordinates cleared.");
 
     // Reset the logging state
-    global.isLoggingSource = false;
+    isLoggingSource = false;
 
     console.log("Source logging state reset.");
 
@@ -167,7 +167,7 @@ function srcClearCoordinates() {
     // Clear the message
     const messageElement = document.getElementById('message-content');
     if (messageElement) {
-        messageElement.textContent = "MESSAGE: Source coordinates cleared. You may log a new source location.";
+        messageElement.textContent = "MESSAGE: Your location coordinates cleared. You may log a new location.";
         messageElement.style.display = 'block'; // Make sure it's visible
         console.log("Message changed and displayed.");
     } else {
@@ -175,9 +175,9 @@ function srcClearCoordinates() {
     }
 
     // Remove the markers from the map, if they exist
-    if (global.pin_source !== null) {
-        global.map.removeLayer(global.pin_source);  // Remove the marker layer from the map
-        global.pin_source = null;  // Explicitly set to null
+    if (pin_source !== null) {
+        map.removeLayer(pin_source);
+        pin_source = null;
         console.log("Source marker removed.");
     }
 
@@ -199,14 +199,14 @@ function dstClearCoordinates() {
 
     
     // Clear the latitude and longitude input fields
-    global.dst_lat = null; // Explicitly set global variables
-    global.dst_lng = null;
+    dst_lat = null; // Explicitly set global variables
+    dst_lng = null;
     document.getElementById('results-btn').disabled = true;  
 
     console.log("Destination Coordinates cleared.");
 
     // Reset the logging state
-    global.isLoggingDestination = false;
+    isLoggingDestination = false;
     console.log("Destination logging state reset.");
 
     // Set button interaction states
@@ -216,7 +216,7 @@ function dstClearCoordinates() {
     // Clear the message
     const messageElement = document.getElementById('message-content');
     if (messageElement) {
-        messageElement.textContent = "MESSAGE: Destination coordinates cleared. You may log a new destination location.";
+        messageElement.textContent = "MESSAGE: Participant coordinates cleared. You may log a new participant location.";
         messageElement.style.display = 'block'; // Make sure it's visible
         console.log("Message changed and displayed.");
     } else {
@@ -224,9 +224,9 @@ function dstClearCoordinates() {
     }
 
     // Remove the markers from the map, if they exist
-    if (global.pin_destination !== null) {
-        global.map.removeLayer(global.pin_destination);
-        global.pin_destination = null;
+    if (pin_destination !== null) {
+        map.removeLayer(pin_destination);
+        pin_destination = null;
         console.log("Destination marker removed.");
     }
 
