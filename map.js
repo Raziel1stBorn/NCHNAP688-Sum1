@@ -27,7 +27,7 @@ module.exports = {
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 
 // Define the variable with the message content
-let message = "MESSAGE: Please find your source location on the map, then click 'Log Coordinates' button.";
+let message = "MESSAGE: Select meeting time and date, then find your location on the map and click 'Log Coordinates' button.";
 
 // Pin Markers
 let pin_source = null;
@@ -39,12 +39,11 @@ let src_lng = null;
 let dst_lat = null;
 let dst_lng = null;
 
-// Variables to denote if the pin will be placed on click or not
-// global.isLoggingSource = false;
-// global.isLoggingDestination = false;
-// window.isLoggingSource = false;
-// window.isLoggingDestination = false;
 
+// Code is to determine what type of environment the code is running in.
+// Was trying to get it to enable/disable certain code if it was in 
+// an actual browser, vs visual studio code. This to do with the
+// testing issues detailed under ** IMPORTANT seen above. 
 if (typeof window !== 'undefined') {
     // Browser-specific code
     console.log("Running in a browser environment");
@@ -130,7 +129,7 @@ function srcEnableCoordinateLogging() {
         isLoggingSource = true;
         isLoggingDestination = false;
         console.log("isLoggingSource:", isLoggingSource, "isLoggingDestination:", isLoggingDestination);
-        messageElement.textContent = "MESSAGE: Now left-click on the map where you want to place your source pin.";
+        messageElement.textContent = "MESSAGE: Now left-click on the map where you want to place the pin for your location.";
     }
 }
 
@@ -142,7 +141,7 @@ function dstEnableCoordinateLogging() {
     isLoggingSource = false;
     isLoggingDestination = true;
     
-    messageElement.textContent = "MESSAGE: Now left-click on the map where you want to place your destination pin.";
+    messageElement.textContent = "MESSAGE: Now left-click on the map where you want to place the pin for the participants' location..";
 }
 
 
@@ -272,7 +271,7 @@ map.on('click', function (event) {
     
         // Update the message and state
         isLoggingSource = false;
-        document.getElementById('message-content').textContent = "MESSAGE: Source pin placed. Now log the destination.";
+        document.getElementById('message-content').textContent = "MESSAGE: Your location pin placed. Now find the participants' location on the map, and click 'Log Coordinates'.";
         
         // Handle button activity
         // The source should have been logged, so disable source logging, 
@@ -311,7 +310,7 @@ map.on('click', function (event) {
 
         // Update the message and state
         isLoggingDestination = false;
-        document.getElementById('message-content').textContent = "MESSAGE: Destination pin placed.";
+        document.getElementById('message-content').textContent = "MESSAGE: Participant location pin placed. Click 'Results' to see Participant Date Time.";
     
         // Handle button activity
         document.getElementById('dst-log-coordinates-btn').disabled = true;
@@ -361,7 +360,6 @@ function getEquivalentDateTime(srcDateTimeValue, srcTimeZone, dstTimeZone) {
     const formattedDateTime = `${formattedParts.find(p => p.type === 'day').value}/${formattedParts.find(p => p.type === 'month').value}/${formattedParts.find(p => p.type === 'year').value} ${formattedParts.find(p => p.type === 'hour').value}:${formattedParts.find(p => p.type === 'minute').value}`;
 
     console.log("Equivalent Date-Time in Destination Time Zone:", formattedDateTime);
-
     return formattedDateTime;
 }
 
@@ -385,6 +383,9 @@ function getResults() {
     const srcDateTimeValue = srcDateTimeInput.value;
     const srcFormattedDateTime = formatDateTime(srcDateTimeValue);
 
+    // Need to declare so we can update the message at the end of the function
+    const messageElement = document.getElementById('message-content');
+
     // Debugging Log
     console.log("Map initialized and click listener attached.");
 
@@ -404,9 +405,6 @@ function getResults() {
                 console.log("Source Street:", src_street);
                 console.log("Source Time Zone:", src_timeZone);
                 console.log("Source Date Time:", srcFormattedDateTime);
-
-                // Update Source Results in the UI
-                //document.getElementById('src-results').textContent = `${src_country}, ${src_town}, ${src_street} - ${srcFormattedDateTime}`;
 
                 // Fetch Destination Location Information
                 fetch(dst_url)
@@ -433,6 +431,7 @@ function getResults() {
                             // Update Destination Results in the UI
                             document.getElementById('dst-dtresults').textContent = `${dstFormattedDateTime}`;
                             document.getElementById('dst-location').textContent = `${dst_country}, ${dst_town}, ${dst_street}`;
+                            document.getElementById('message-content').textContent = "MESSAGE: Choose from one of the three buttons under the map, or Clear Coordinates.";                            
                         } else {
                             console.error("Detailed location not found for destination coordinates.");
                         }
