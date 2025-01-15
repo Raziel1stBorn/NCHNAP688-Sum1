@@ -72,10 +72,15 @@
      <br>
   ![Image showing npm test command in Visual Studio Code.](/development_progress_images/npm_test_vs.jpg)  
 
-  ## APIs
+  <br>
+  Note: There are still bugs and testing coverage is not complete at time of release.   
+  <br><br>
 
-  Overview: Briefly explain the APIs used or created in the project<br>
-  Endpoints: Provide details about API endpoints, request/respponse formats, and example calls. 
+  ## Third-Party Code and APIs
+
+  This product uses:<br>
+  [Leaflet](https://leafletjs.com/) for the interactive map.<br>
+  [OpenCage](https://opencagedata.com/) for the geocode locations and timezones. 
  
   <hr>
 </details>
