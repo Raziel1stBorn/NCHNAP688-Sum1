@@ -8,7 +8,7 @@
 */  
 // Import required library
 
-const L = require('leaflet');
+/*const L = require('leaflet');
 
 // Export functions
 module.exports = { 
@@ -19,7 +19,7 @@ module.exports = {
     srcClearCoordinates,
     dstClearCoordinates,
     saveAsImage
-}; 
+}; */
 
 
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
