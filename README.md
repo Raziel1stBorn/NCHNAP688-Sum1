@@ -69,9 +69,9 @@
   ![Image showing code edit of map.js.](/development_progress_images/map_js_code_edit.jpg)
 
   7. Open a terminal in Visual Studio Code and run the command <**npm test**>
-  <br>
-  ![Image showing npm test command in Visual Studio Code.](/development_progress_images/npm_test_vs.jpg)     
- 
+     <br>
+  ![Image showing npm test command in Visual Studio Code.](/development_progress_images/npm_test_vs.jpg)  
+
   ## APIs
 
   Overview: Briefly explain the APIs used or created in the project<br>
