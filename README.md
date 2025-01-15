@@ -42,6 +42,13 @@
 
   Provide step-by-step instructions to clone the repository and set up the environment
 
+  To clone this repository, and set up a test environment of your own:
+
+  1. Install [Git](https://git-scm.com/) (if not already installed)
+  
+  2. Open your Git terminal and run: git clone https://github.com/Raziel1stBorn/NCHNAP688-Sum1
+  ![Image showing Git Bash cloning of a repository.](/development_progress_images/bash_clone_repository.jpg)
+
   ## APIs
 
   Overview: Briefly explain the APIs used or created in the project<br>
