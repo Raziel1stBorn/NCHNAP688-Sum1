@@ -54,12 +54,22 @@
      <br>
   ![Image showing project directory path in Git Bash Terminal.](/development_progress_images/bash_directory_navigate.jpg)
 
-  4. Open [Visual Studio Code](https://code.visualstudio.com/) (assuming installed) on your local PC with the command **code .**
+  4. Open [Visual Studio Code](https://code.visualstudio.com/) (assuming installed) on your local PC with the command <**code .**>
      <br>
   ![Image showing visual studio code bash open command.](/development_progress_images/bash_vs_code.jpg)
      
+  5. Set up the environment
+      - Ensure [Node.js](https://nodejs.org/) is installed
+      - From the GitBash terminal run the command <**npm install**>
+      - From the GitBash terminal run the command <**npm install jest --save-dev**>
+<br>
+  6. In Visual Studio Code, edit the map.js file, removing the comment markers on lines 11 and 22. All tests will fail if this code is left commented, but the app will not run in a webbrowser if it is uncommented. Save the map.js change.
+     <br>
+  ![Image showing code edit of map.js.](/development_progress_images/map_js_code_edit.jpg)
 
-     
+  7. Open a terminal in Visual Studio Code and run the command <**npm test**>
+  ![Image showing npm test command in Visual Studio Code.](/development_progress_images/npm_test_vs.jpg)     
+ 
   ## APIs
 
   Overview: Briefly explain the APIs used or created in the project<br>
