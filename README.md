@@ -47,8 +47,19 @@
   1. Install [Git](https://git-scm.com/) (if not already installed)
   
   2. Open your Git terminal and run: git clone https://github.com/Raziel1stBorn/NCHNAP688-Sum1
+     <br>
   ![Image showing Git Bash cloning of a repository.](/development_progress_images/bash_clone_repository.jpg)
 
+  3. Navigate to the project directory
+     <br>
+  ![Image showing project directory path in Git Bash Terminal.](/development_progress_images/bash_directory_navigate.jpg)
+
+  4. Open [Visual Studio Code](https://code.visualstudio.com/) (assuming installed) on your local PC with the command **code .**
+     <br>
+  ![Image showing visual studio code bash open command.](/development_progress_images/bash_vs_code.jpg)
+     
+
+     
   ## APIs
 
   Overview: Briefly explain the APIs used or created in the project<br>
