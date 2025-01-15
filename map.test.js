@@ -78,7 +78,7 @@ describe('srcEnableCoordinateLogging', () => {
         dateTimeInput.value = '2025-01-17T23:59';  // Simulate a date being selected
     
         srcEnableCoordinateLogging();
-        expect(messageElement.textContent).toBe("MESSAGE: Now left-click on the map where you want to place your source pin.");
+        expect(messageElement.textContent).toBe("MESSAGE: Now left-click on the map where you want to place the pin for your location.");
     });
     
     test('should set the correct flags when a date is selected', () => {
@@ -102,7 +102,7 @@ describe('srcEnableCoordinateLogging', () => {
         dateTimeInput.value = '2025-01-17T23:59';  // Simulate a date being selected
     
         srcEnableCoordinateLogging();
-        expect(messageElement.textContent).toBe("MESSAGE: Now left-click on the map where you want to place your source pin.");
+        expect(messageElement.textContent).toBe("MESSAGE: Now left-click on the map where you want to place the pin for your location.");
     });
     
     test('should update the message element with the correct message when no date is selected', () => {
@@ -138,7 +138,7 @@ describe('dstEnableCoordinateLogging', () => {
 
         // Assert the message content
         expect(messageElement.textContent).toBe(
-            "MESSAGE: Now left-click on the map where you want to place your destination pin."
+            "MESSAGE: Now left-click on the map where you want to place the pin for the participants' location."
         );
     });
 });    
@@ -292,7 +292,7 @@ describe('dstClearCoordinates', () => {
         dstClearCoordinates();
         const messageContent = document.getElementById('message-content');
         expect(messageContent.textContent.trim()).toBe(
-            'MESSAGE: Destination coordinates cleared. You may log a new destination location.'
+            'MESSAGE: Participant coordinates cleared. You may log a new participant location.'
         );
         expect(messageContent.style.display).toBe('block');
     });

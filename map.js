@@ -8,7 +8,7 @@
 */  
 // Import required library
 
-/*const L = require('leaflet');
+const L = require('leaflet');
 
 // Export functions
 module.exports = { 
@@ -19,7 +19,7 @@ module.exports = {
     srcClearCoordinates,
     dstClearCoordinates,
     saveAsImage
-}; */
+}; 
 
 
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
@@ -141,7 +141,7 @@ function dstEnableCoordinateLogging() {
     isLoggingSource = false;
     isLoggingDestination = true;
     
-    messageElement.textContent = "MESSAGE: Now left-click on the map where you want to place the pin for the participants' location..";
+    messageElement.textContent = "MESSAGE: Now left-click on the map where you want to place the pin for the participants' location.";
 }
 
 
