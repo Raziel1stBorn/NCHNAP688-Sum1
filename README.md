@@ -22,7 +22,21 @@
 
   ## Prerequisites
 
-  List tools, libraries, frameworks required to run the project, e.g. node.js, npm
+  The following files are needed to run this product. <br>
+  As the product uses APIs, an internet connection and access to these APIs is also required. 
+
+| File                        | Purpose                                                               |
+| ------------------          | -------------------------------------------                           |
+| index.html                  | The welcome web page containing user instructions                     |
+| index.css                   | Cascading style sheet to control formatting on the index.html page    |
+| app.html                    | The application web page, where the application is displayed          |
+| application_page.css        | Cascading style sheet to control formatting on the app.html page      |
+| open_streetmap.css          | Cascading style sheet to control the Leaflet OpenStreetMap            |
+| map.js                      | Javascript which gives the application its functionality              |
+| images/index_background.png | Background image for the index.html page                              |
+| images/location_pin.gif     | Custom pin image for marking the first (your) location                |
+| images/participant_pin.gif  | Custom pin image for marking the second (participant) location        |
+
 
   ## Installation Steps
 
