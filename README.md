@@ -13,8 +13,8 @@
 
 </details>
 
-# Time Zone Meeting Aid
-[CLICK to access the live app](https://raziel1stborn.github.io/NCHNAP688-Sum1/)
+# Project: Time Zone Meeting Aid
+[Access the live app](https://raziel1stborn.github.io/NCHNAP688-Sum1/)
 
 <details>
   <summary>1. User and Technical Documentation</summary>
@@ -23,7 +23,7 @@
   ## Prerequisites
 
   The following files are needed to run this product. <br>
-  As the product uses APIs, an internet connection and access to these APIs is also required. 
+  And an internet connection to access the APIs. 
 
 | File                        | Purpose                                                               |
 | ------------------          | -------------------------------------------                           |
@@ -37,8 +37,9 @@
 | images/location_pin.gif     | Custom pin image for marking the first (your) location                |
 | images/participant_pin.gif  | Custom pin image for marking the second (participant) location        |
 
+<br>
 
-  ## Installation Steps
+  ## Clone and Initialise Repository
 
   Provide step-by-step instructions to clone the repository and set up the environment
 
@@ -78,31 +79,33 @@
 
   ## Third-Party Code and APIs
 
-  This product uses:<br>
   [Leaflet](https://leafletjs.com/) for the interactive map.<br>
   [OpenCage](https://opencagedata.com/) for the geocode locations and timezones. 
+
+  <br>
+
+  ## Technology Stack
+  
+  [HyperText Markup Language](https://developer.mozilla.org/en-US/docs/Web/HTML) <br>
+  [Cascading Style Sheets](https://developer.mozilla.org/en-US/docs/Web/CSS) <br>
+  [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) <br>
  
   <hr>
 </details>
 
 
 <details>
-  <summary>2. Project Overview</summary>  
+  <summary>2. Purpose</summary>  
   <hr>
   
   ## Purpose
   
   My employer is part of Associated British Foods plc, which is multi-national business with operations in [56 countries around the world](https://www.abf.co.uk/about-us/where-we-operate). With colleagues in mutliple timezones,     planning meetings with consideration and convenience can be challenging. My product proposal is for an easy to use application where users can set the date and time they would like the meeting, their location, and then select a second location relating to a meeting participant in another location. The application will give the equivalent date and time for the participants location, thus enabling the meeting organiser to see the relative date and time they are requesting.   
-  <br>
-
-  ## Technology Stack
-  
-  The primary technologies and frameworks used (e.g. Python, Javascript, SQL, APIs, etc)
-  <hr>
+<hr>
 </details>
 
 <details>
-  <summary>3. Product Design</summary>  
+  <summary>3. Design</summary>  
   <hr>
   
 ## Low-Fidelity Plan
@@ -116,7 +119,7 @@ The user can start using the functionality of the application, or quit. As this 
 
 ## Moodboard
 
-To aid decision making regarding colour schemes and design choices, I created a moodboard. This was made up from screen snippets of solid colours snapped from abf.co.uk, I then identified the HEX and RGB values of these colours for easy reference when it comes to formatting the visuals of the applicaiton. A list of CSS web safe fonts was obtained from [w3schools.com](https://www.w3schools.com/cssref/css_websafe_fonts.php) these were added to the moodboard and Verdana was chosen for the application font as it is stylistically complementary to the font used for the Associated British Foods plc name. An AI generated image of the globe was created using [Microsoft Designer](https://designer.microsoft.com/image-creator?scenario=texttoimage) as it is free to use and avoids any licensing issues.            
+To aid decision making regarding colour schemes and design choices, I created a moodboard. I identified HEX and RGB values of company colours for easy reference. A list of CSS web safe fonts was obtained from [w3schools.com](https://www.w3schools.com/cssref/css_websafe_fonts.php), Verdana was chosen as it is stylistically complementary to the font used for the Associated British Foods plc text. An AI generated image of the globe was created using [Microsoft Designer](https://designer.microsoft.com/image-creator?scenario=texttoimage).            
 
   ![Image of moodboard showing colour and font design elements.](/images/mood_board.png)
 
@@ -218,8 +221,6 @@ In addition to the 'main' branch, there will be three additional branches, conta
 
   ## Ticketing System / Labels
 
-  As per the assignment criteria, one ticket is one feature, corresponding to one branch and one pull request. 
-  <br><br>
   To standardise tickets and encourage good practice of providing relevant information and context, templates will be used for tickets, with bug :trollface: :hammer: tickets having a different template to feature tickets.
   <br><br>
 
@@ -265,7 +266,7 @@ Here is an example of a bug ticket.
 </details>
 
 <details>
-  <summary>5. Project Management Tools (Dedicated Section)</summary>
+  <summary>5. PROJECT MANAGEMENT TOOLS</summary>
   <hr>
 
 ## Project Management Tools
@@ -301,7 +302,7 @@ Here is an example of a bug ticket.
 
 
 <details>
-  <summary>6. MVP Build Process (Dedicated Section)</summary>
+  <summary>6. MVP BUILD PROCESS NARRATION</summary>
   <hr>
   
   ## Sprint 1
@@ -335,9 +336,9 @@ Temporary button images were created and used for the three main actions at the 
   <img src="/development_progress_images/sprint_3_app_mid.jpg" alt="Image showing the App Page progress during the third sprint" width="500"/>
 </div>
 
-Real column headings have been added to replace the placeholders. The means to select a second location have been implmented. The 'Results' section is displaying the First Location information, but the code has not yet been written to calculate and return the date and time for the Second Location. Changes were also made to frame sizes in an attempt to ensure that all elements are visible to the user on a 1920 x 1080 resoution display without the need for vertical scrolling. Naturally this will vary from user to user, depending on their personal display and browser setup. 
+Real column headings have been added to replace the placeholders. The means to select a second location have been implemented. The 'Results' section is displaying the First Location information, but the code has not yet been written to calculate and return the date and time for the Second Location. Changes were also made to frame sizes in an attempt to ensure that all elements are visible to the user on a 1920 x 1080 resolution display without the need for vertical scrolling. Naturally this will vary from user to user, depending on their personal display and browser setup. 
 <br>
-  It has been decided to extend the timeframe of this sprint. This due to feedback not yet being sought from a third-party user. Additionally it is clear that a 4th and possibly 5th sprint will be needed in order to deliver the MVP. <br>
+  It has been decided to extend the timeframe of this sprint. This due to feedback not yet being sought from a third-party user. Additionally, it is clear that a 4th and possibly 5th sprint will be needed in order to deliver the MVP. <br>
 <div style="display: flex; justify-content: space-around; align-items: center;">
   <img src="/development_progress_images/sprint_3_progress_overview.jpg" alt="Image showing duration change to Iteration 3, and addition of Iteration 4" width="800" style="margin-right: 10px;"/>
 </div>
@@ -445,10 +446,21 @@ Running the test suite again after these changes, all tests ran successfully. <b
 
 
 <details>
-  <summary>8. Evaluation (Dedicated Section)</summary>
+  <summary>8. EVALUATION </summary>
+
+ <hr>
+
+  ## Product
+
+  ## Process
+  
+  
   Difficulties:<br>
   - Had not used this style of project management before.<br>
   - At the start of the project I was not sure if I had the capability to be able to build it, possibly too ambitous. <br>
   - Difficult to assign tickets and work with multiple branches when only one person is doing all of the work. <br>
-  - How granular to make the tickets/requirements. 
+  - How granular to make the tickets/requirements.
+
+ <hr>
+ 
 </details>
